@@ -68,7 +68,7 @@ In TypeScript, we must declare members of the class either in the class body out
 You can declare a property without initializing it:
 
 ```typescript
-title: string;
+title: String;
 ```
 
 Then you can assign a value at a later stage, for example in the constructor or in the ngOnInit method. Here we explicitly noted that `title` is of the type `string`. \(The type is inferred by TypeScript when we immediately assign a value, so there's no need to add the type in this case.\)
@@ -94,7 +94,7 @@ Try changing the value of `title` inside the method `ngOnInit`. Which value will
 {% code-tabs %}
 {% code-tabs-item title="src/app/input-button-unit/input-button-unit.component.ts" %}
 ```typescript
-title: string = 'Hello World';
+title: String = 'Hello World';
 
 constructor() { 
   this.title = 'I Love Angular';
