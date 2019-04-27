@@ -2,7 +2,7 @@
 
 We will create a new component which will be used for each todo item that is displayed on the list. It will be a simple component at first, but it will grow later on. What's important is that **it will get the todo item as an input from its parent component**. This way it can be a reusable component, and not rely directly on the application's data and state.
 
-Create a new component called `todo-item`:
+Create a new component called `todo-item`
 
 ```text
 ng g c todo-item
@@ -10,7 +10,7 @@ ng g c todo-item
 
 You can see a new folder was created - `src/app/todo-item`, with the component files inside.
 
-Use the new component in the template of `app-root` component - inside the `<li>` element:
+Use the new component in the template of `app-root` component - inside the `<li>` element
 
 {% code-tabs %}
 {% code-tabs-item title="src/app/app.component.ts" %}
