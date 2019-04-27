@@ -1,6 +1,6 @@
 # \#17: 💾Local storage
 
-We would like to persist the todo list on our computer, so that when accessing or reloading the app we'll see the list with the changes we've made. Ideally the list would be saved in a database, but we will implement a simple version using the browser's own storage. 
+We would like to persist the todo list on our computer, so that when accessing or reloading the app we'll see the list with the changes we've made. Ideally the list would be saved in a database, but we will implement a simple version using the browser's own storage.
 
 ## What is local storage?
 
@@ -44,9 +44,9 @@ There are a few more wonderful methods you can use, as described in the [MDN Web
 
 ## Angular time \(back to our app\)
 
-In the following section, we will build a local storage service that will be used to store our todo list items. It will be a generic service for lists of objects. We'll need to tell it the name of data we're looking for \(a key\), so we can use it to store other lists as well. 
+In the following section, we will build a local storage service that will be used to store our todo list items. It will be a generic service for lists of objects. We'll need to tell it the name of data we're looking for \(a key\), so we can use it to store other lists as well.
 
-As in earlier chapters, we will generate the service using the Angular CLI. We will name the new service  `storage`
+As in earlier chapters, we will generate the service using the Angular CLI. We will name the new service `storage`
 
 ```bash
 ng g s services/storage
@@ -94,7 +94,7 @@ import { StorageService } from './services/storage.service';
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
-Since we cannot access an item on the list directly in the local storage, we'll implement only two methods: getting the data and setting the data. Changing the list will be done by the TodoListService. To each method we'll pass the key \(name\) of the data we want. 
+Since we cannot access an item on the list directly in the local storage, we'll implement only two methods: getting the data and setting the data. Changing the list will be done by the TodoListService. To each method we'll pass the key \(name\) of the data we want.
 
 ### getData
 
@@ -114,7 +114,7 @@ Wait! Wait! why `JSON.parse`? The answer is simple: As described above, local st
 
 ### setData
 
-This method will save the given data \(object, list, etc.\) under the given key. 
+This method will save the given data \(object, list, etc.\) under the given key.
 
 {% code-tabs %}
 {% code-tabs-item title="src/app/services/storage.service.ts" %}
@@ -211,7 +211,7 @@ updateItem(item: TodoItem, changes) {
 {% endcode-tabs %}
 
 So what is going on here?  
-We locate the item in the list. Then in the same place we assign a new object, which is constructed from the original item and the changes made to it. We're using the spread operator for this: a new object is constructed, composed of the original set of keys and values \(`...item`\) which are overridden by the keys and values of `changes`. \(If a key in  `changes`  doesn't exist in `item`, it is added to the new object.\)
+We locate the item in the list. Then in the same place we assign a new object, which is constructed from the original item and the changes made to it. We're using the spread operator for this: a new object is constructed, composed of the original set of keys and values \(`...item`\) which are overridden by the keys and values of `changes`. \(If a key in `changes` doesn't exist in `item`, it is added to the new object.\)
 
 ### DRY - Don't Repeat Yourself
 
@@ -259,7 +259,7 @@ deleteItem(item: TodoItem) {
 
 ### Final result
 
-Our TodoListService is ready with methods to get and modify the todo list. We can use these methods from the components. 
+Our TodoListService is ready with methods to get and modify the todo list. We can use these methods from the components.
 
 {% code-tabs %}
 {% code-tabs-item title="src/app/services/todo-list.service.ts" %}
@@ -294,15 +294,15 @@ export class TodoListService {
 
   addItem(item: TodoItem) {
     this.todoList.push(item);
-    this.saveList();
+    this.storageService.setData(todoListStorageKey, this.todoList);
   }
-  
+
   updateItem(item, changes) {
     const index = this.todoList.indexOf(item);
     this.todoList[index] = { ...item, ...changes };
-    this.saveList();
+    this.storageService.setData(todoListStorageKey, this.todoList);
   }
-  
+
   deleteItem(item) {
     const index = this.todoList.indexOf(item);
     this.todoList.splice(index, 1);
@@ -310,7 +310,6 @@ export class TodoListService {
   }
 
 }
-
 ```
 {% endcode-tabs-item %}
 {% endcode-tabs %}

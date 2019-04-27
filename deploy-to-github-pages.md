@@ -71,7 +71,7 @@ fatal: could not read Username for \'https://github.com\': No error\n',
 
 you can do the following
 
-1. Create a Personal Access Token here: [https://github.com/settings/tokens](https://github.com/settings/tokens) and give this token access to your repo and copy (!) it!
+1. Create a Personal Access Token here: [https://github.com/settings/tokens](https://github.com/settings/tokens)
 2. Run the following command and replace your token, organisation \(your user\), repository, username and email:
 
    ```text

@@ -82,8 +82,7 @@ Go to the browser and see the result - click on the Save button.
 
 We pass a static string to the method call: `Button Clicked!'` But we want to pass the value that the user typed in the input box!
 
-In the next chapter we will learn how to use properties of one element in another element in the same template. Then we'll be able to complete the implementation of the click event of the `Save` button.
-But now we'll bind a method to an event on the input element: when the user clicks Enter, the method `changeTitle` will be called.
+In the next chapter we will learn how to use properties of one element in another element in the same template. Then we'll be able to complete the implementation of the click event of the `Save` button. But now we'll bind a method to an event on the input element: when the user clicks Enter, the method `changeTitle` will be called.
 
 ### 'keyup' event
 
@@ -144,7 +143,7 @@ Now the title will change only when the user hits the Enter key while typing in 
 
 ### Explore the $event
 
- ![lab-icon](.gitbook/assets/lab%20%281%29.jpg)**Playground:** You can change the changeTitle method to log the `$event` object in the console. This way you can explore it and see what properties it has.
+![lab-icon](.gitbook/assets/lab%20%281%29.jpg)**Playground:** You can change the changeTitle method to log the `$event` object in the console. This way you can explore it and see what properties it has.
 
 Change the method `changeTitle`:
 

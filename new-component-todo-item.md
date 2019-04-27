@@ -2,7 +2,7 @@
 
 We will create a new component which will be used for each todo item that is displayed on the list. It will be a simple component at first, but it will grow later on. What's important is that **it will get the todo item as an input from its parent component**. This way it can be a reusable component, and not rely directly on the application's data and state.
 
-Create a new component called `todo-item`
+Create a new component called `todo-item`:
 
 ```text
 ng g c todo-item
@@ -10,7 +10,7 @@ ng g c todo-item
 
 You can see a new folder was created - `src/app/todo-item`, with the component files inside.
 
-Use the new component in the template of `app-root` component - inside the `<li>` element
+Use the new component in the template of `app-root` component - inside the `<li>` element:
 
 {% code-tabs %}
 {% code-tabs-item title="src/app/app.component.ts" %}
@@ -42,14 +42,7 @@ Inside the newly generated `TodoItemComponent` class in `todo-item.component.ts`
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
-It tells the component to expect an input of type string and to assign it to the class member called `itemTitle`.
-**Make sure that `Input` is added to the import statement in the first line in the file**.
-
- ```js
-import { Component, OnInit, Input } from '@angular/core';
-
-
-Now we can use it inside the `todo-item` template and extract the item's title with interpolation: `{{ item.title }}`
+It tells the component to expect an input and to assign it to the class member called `item`. Make sure that `Input` is added to the `import` statement in the first line in the file. Now we can use it inside the `todo-item` template and extract the item's title with interpolation: `{{ item.title }}`
 
 The component should look like this now:
 

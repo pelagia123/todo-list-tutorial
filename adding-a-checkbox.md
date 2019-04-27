@@ -34,7 +34,7 @@ Now, in order for the checkbox to do anything, we need to add a `click` event ha
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
-When we click on the checkbox, it will run the `completeItem` method. Let's talk about what this method needs to accomplish. We want to be able to toggle some CSS styling on the item's title so that when the checkbox is checked it will have a  strikethrough. We also want to save the status of the item in the local storage. In order to achieve this, we will emit an update event with the new status of the item and catch it in the parent component.
+When we click on the checkbox, it will run the `completeItem` method. Let's talk about what this method needs to accomplish. We want to be able to toggle some CSS styling on the item's title so that when the checkbox is checked it will have a strikethrough. We also want to save the status of the item in the local storage. In order to achieve this, we will emit an update event with the new status of the item and catch it in the parent component.
 
 ```javascript
 export class TodoItemComponent implements OnInit {
@@ -74,8 +74,9 @@ And finally, add the CSS to our `todo-item.component.css` file:
     text-decoration: line-through;
   }
 ```
-Next step is to tell the parent element list-manager what to do, when update event is emitted. In order to do so we have to bind update action and update method that will trigger a proper function in TodoListService.
-So we apply here:
+
+Next step is to tell the parent element list-manager what to do, when update event is emitted. In order to do so we have to bind update action and update method that will trigger a proper function in TodoListService. So we apply here:
+
 {% code-tabs %}
 {% code-tabs-item title="src/app/list-manager/list-manager.component.ts" %}
 ```markup
@@ -85,7 +86,9 @@ So we apply here:
 ```
 {% endcode-tabs-item %}
 {% endcode-tabs %}
+
 Next modifications:
+
 {% code-tabs %}
 {% code-tabs-item title="src/app/list-manager/list-manager.component.ts" %}
 ```markup
@@ -96,7 +99,9 @@ Next modifications:
 ```
 {% endcode-tabs-item %}
 {% endcode-tabs %}
+
 And create additional method to handle this update item event. Very similar to removeItem function:
+
 {% code-tabs %}
 {% code-tabs-item title="src/app/list-manager/list-manager.component.ts" %}
 ```markup
@@ -106,4 +111,6 @@ updateItem(item, changes) {
 ```
 {% endcode-tabs-item %}
 {% endcode-tabs %}
+
 Voila! Checking the checkbox should apply a line through the todo title, and unchecking the checkbox should remove the line.
+

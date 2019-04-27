@@ -79,7 +79,7 @@ Angular lets us bind properties to the template easily and conveniently; we saw 
 
 Try this out and see the result in the browser!
 
-## Binding to Methods
+## a\# Binding to Methods
 
 The expressions that we can bind to in the template are not limited to class properties. They can be a method call or almost any other valid JavaScript expression.
 
@@ -107,7 +107,7 @@ Replace one or both of the bindings of the title in the template with the method
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
-## Change Detection
+## b\# Change Detection
 
 Angular has a very efficient change detection mechanism. It looks for bindings in the components' templates, and then updates the value each time the bound expression is changed.
 
@@ -127,15 +127,15 @@ ngOnInit() {
 
 `setTimeout` is a JavaScript function. Its first parameter is what we want to happen - a function of our choice. The second parameter is how much we want to delay it, in milliseconds. In this example, we pass an **inline anonymous function** which sets the value of `this.title`. For this we use one of the new features in JavaScript ES6: an **arrow function**.
 
-## Binding to Methods
+## c\# Binding to Methods
 
 The expressions that we can bind to in the template are not limited to class properties. They can be a method call or almost any other valid Angular template expression.
 
-## Resources
+## d\# Resources
 
 [Angular Guide - Template Property Binding](https://angular.io/guide/template-syntax#property-binding--property-)
 
-## A note about accessing the DOM
+## e\# A note about accessing the DOM
 
 Using regular JavaScript, we can insert the value to the input via its properties. We'll fetch the element from the DOM and assign the value of the member `title` to the element's `value` property.
 
