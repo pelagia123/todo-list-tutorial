@@ -53,7 +53,7 @@ For more information see [https://github.com/angular-buch/angular-cli-ghpages](h
 
 ## Known Issues
 
-On \(windows\) machines you probably run into an issue like the following:
+On \(windows\) machines you might run into an issue like the following:
 
 ```text
 An error occurred!

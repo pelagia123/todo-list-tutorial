@@ -55,7 +55,7 @@ First let's remove a bit of the template that we don't need. Remove these lines:
 
 Now we want to take the value of the input \(that the user typed\) and change the title when we press the `Save` button.
 
-We already know how to create a button and react to clicking on it. We now need to pass to the method some data from a different element. We want to use the `input` element's value from inside the `button` element.
+We already know how to create a button and react to clicking on it. We now need to pass some data from a different element to the method. We want to use the `input` element's value from inside the `button` element.
 
 Angular helps us do exactly that. **We can store a reference to the element we want in a variable with the name we choose,** for example `inputElementRef`, **using a simple syntax - a hash.** Add `#inputElementRef` to the `input` element, and use it in the `click` event of the button:
 
@@ -75,7 +75,7 @@ template: `
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
-Now we can use the value that the user entered in the `input` element in the method called when clicking the `Save` button!
+Now we can use the value that the user entered in the `input` element directly in the method call to handle clicking the `Save` button!
 
 ### What is that `#` we see?
 

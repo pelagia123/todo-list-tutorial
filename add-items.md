@@ -1,6 +1,6 @@
 # \#12: 📌Add items
 
-We want to add items to our list. With Angular, we can do this easily and see the item added immediately. We will do this from within the `input-button-unit` component we've created before. We'll change it so when hitting the Enter key or clicking the submit button, the value of the input box will become the title of the new item, and the new item will be added to the list.
+We want to add items to our list. With Angular, we can do this easily and see the item added immediately. We will do this from within the `input-button-unit` component we created earlier. We'll change it so when hitting the Enter key or clicking the submit button, the value of the input box will become the title of the new item, and the new item will be added to the list.
 
 But we don't want the `input-button-unit` component to be responsible for adding a new item to the list. We want it to have minimal responsibility, and **delegate the action to its parent component**. One of the advantages of this approach is that this component will be reusable, and can be attached to a different action in different situations.
 
@@ -48,7 +48,7 @@ We delegate everything to the parent component - even actually changing the titl
 
 We pass `newTitle` when we emit the event. Whatever we pass in `emit()` will be available for the parent as `$event`. //line 51: no mention of `todo-input` component in tutorial might be `todo-item` or `input-button-unit` Nothing else is changed in the `todo-input` component. The events emitted from `keyup.enter` and `click` still call the same method, but the method itself has changed.
 
-The method name may seem irrelevant right now. Let's change it to something more appropriate: `submitValue`. You can use the IDE tools to refactor the method name - make sure that it is changed in the template as well.
+The method name no longer matches the action it provides. Let's change it to something more appropriate: `submitValue`. You can use the IDE tools to refactor the method name - make sure that it is changed in the template as well.
 
 {% code-tabs %}
 {% code-tabs-item title="src/app/input-button-unit.component.ts" %}

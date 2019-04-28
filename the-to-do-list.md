@@ -24,7 +24,7 @@ export class AppComponent {
 
 Now you have to tell the browser to display those items. For this, you will use the **Angular built-in directive,** `*ngFor`. It works like an enhanced loop in Java. The `*` notation causes Angular to use the current element as a template when rendering the list.
 
-Insert the loop right after `<app-input-button-unit></app-input-button-unit>`, this way:
+Insert the loop right after `<app-input-button-unit></app-input-button-unit>` like this:
 
 {% code-tabs %}
 {% code-tabs-item title="src/app/app.component.ts" %}

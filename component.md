@@ -84,7 +84,7 @@ h1 {
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
-We'll add more style later on.
+We'll add more styles later on.
 
 **Note:** the Angular CLI supports css-extension languages out-of-the-box: sass, less, and stylus.
 

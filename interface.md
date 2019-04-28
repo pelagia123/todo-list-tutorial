@@ -12,7 +12,7 @@ Create a `TodoItem` interface in a new `interfaces` folder with the Angular CLI:
 ng g i interfaces/todo-item
 ```
 
-`i` is short for... you guessed it - interface. Adding a path causes the Angular CLI to generate the folders you stated if they do not already exist.
+`i` is short for... you guessed it - interface. Adding a path in the command to the Angular CLI generates the folders you specified if they do not already exist.
 
 Open the newly created file `src/app/interfaces/todo-item.ts`:
 
