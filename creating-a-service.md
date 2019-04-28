@@ -73,7 +73,8 @@ Now we can move the `todoList` array from `ListManagerComponent` to our new serv
 {% code-tabs %}
 {% code-tabs-item title="src/app/services/todo-list.service.ts" %}
 ```typescript
-private todoList: TodoItem[] = [  {title: 'install NodeJS'},
+private todoList: TodoItem[] = [
+  {title: 'install NodeJS'},
   {title: 'install Angular CLI'},
   {title: 'create new app'},
   {title: 'serve app'},
@@ -132,11 +133,15 @@ export class TodoListService {
 
 After creating the service, we can inject it into our `list-manager` component. In Angular Dependency Injection is very simple. We pass it as a parameter in the constructor - the parameter's type is the class name of the service. Angular assigns the instance it created to the parameter name, and we can use it from within the constructor. Before implementing it ourselves, let's see how it works:
 
+{% code-tabs %}
+{% code-tabs-item title="src/app/list-manager/list-manager.component.ts" %}
 ```typescript
 constructor(todoListService: TodoListService) {
   todoListService.getTodoList();
 }
 ```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
 
 Typescript helps us furthermore by giving a shortcut for assigning the parameter to a class member. By adding `private` or `public` before the parameter name it is automatically assigned to `this`. So instead of declaring and assigning the property by ourselves:
 
