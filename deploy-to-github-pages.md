@@ -2,7 +2,7 @@
 
 This is an old version - we should check this :\)
 
-To deploy our changes to GitHub pages we will use the angular-cli-ghpages package [https://github.com/angular-buch/angular-cli-ghpages](https://github.com/angular-buch/angular-cli-ghpages)
+To deploy our changes to GitHub pages we will use the angular-cli-ghpages package [https://github.com/angular-schule/angular-cli-ghpages](https://github.com/angular-schule/angular-cli-ghpages)
 
 * You need to have a GitHub user
 * You need to create a repostiroy for your project.
@@ -11,7 +11,7 @@ To deploy our changes to GitHub pages we will use the angular-cli-ghpages packag
 
 ## Creating a GitHub user
 
-If you already have a GitHub user you can skip this step. To Create a GitHub user go to GitHub: [https://github.com/](https://github.com/) Fill the regetration form and make sure to validate your email address.
+If you already have a GitHub user you can skip this step. To Create a GitHub user go to GitHub: [https://github.com/](https://github.com/) Fill the registration form and make sure to validate your email address.
 
 ## Create your App repository
 
@@ -44,12 +44,12 @@ Then simply run:
 
 ```text
 ng build --prod --base-href="/[your-repo-name]/"
-angular-cli-ghpages
+angular-cli-ghpages --dir=dist/todo-list
 ```
 
-Your app will be available at \[[https://\[your-GH-username\].github.io/\[repo-name\]\(https://\[your-GH-username\].github.io/\[repo-name\)\](https://[your-GH-username].github.io/[repo-name]%28https://[your-GH-username].github.io/[repo-name%29\)\]
+Your app will be available at \[[https://\[your-GH-username\].github.io/\[repo-name\]\(https://\[your-GH-username\].github.io/\[repo-name\]\](https://[your-GH-username].github.io/[repo-name]%28https://[your-GH-username].github.io/[repo-name%29\)\]
 
-For more information see [https://github.com/angular-buch/angular-cli-ghpages](https://github.com/angular-buch/angular-cli-ghpages).
+For more information see [https://github.com/angular-shule/angular-cli-ghpages](https://github.com/angular-schule/angular-cli-ghpages).
 
 ## Known Issues
 

@@ -6,7 +6,7 @@ Now you are going to add the to do list itself to the component `app-root`. Open
 {% code-tabs-item title="src/app/app.component.ts" %}
 ```typescript
 export class AppComponent {
-  title = 'app';
+  title = 'todo-list';
   todoList = [
     {title: 'install NodeJS'},
     {title: 'install Angular CLI'},
