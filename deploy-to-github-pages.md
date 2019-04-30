@@ -47,7 +47,7 @@ angular-cli-ghpages --dir=dist/todo-list
 
 Your app will be available at \[[https://\[your-GH-username\].github.io/\[repo-name\]\(https://\[your-GH-username\].github.io/\[repo-name\]\](https://[your-GH-username].github.io/[repo-name]%28https://[your-GH-username].github.io/[repo-name%29\)\]
 
-For more information see [https://github.com/angular-shule/angular-cli-ghpages](https://github.com/angular-schule/angular-cli-ghpages).
+For more information see [https://github.com/angular-schule/angular-cli-ghpages](https://github.com/angular-schule/angular-cli-ghpages).
 
 ## Known Issues
 
