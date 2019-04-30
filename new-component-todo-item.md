@@ -16,7 +16,7 @@ Use the new component in the template of `app-root` component - inside the `<li>
 {% code-tabs-item title="src/app/app.component.ts" %}
 ```markup
 <ul>
-  <li *ngFor="let item of todoList">
+  <li *ngFor="let todoItem of todoList">
     <app-todo-item></app-todo-item>
   </li>
 </ul>
