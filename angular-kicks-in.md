@@ -7,7 +7,7 @@ If you're really eager to start coding, you can skip this chapter and come back 
 
 Open the file `index.html`. The content that is rendered in the browser's window is everything you see inside the `<body>` element. All you can see there now is another, non-HTML element: `<app-root></app-root>`. This element is actually an Angular Component, defined in the file `app/app.component.ts` with the class named **AppComponent**. \(We'll take a look at it in the next chapter\).
 
-> Angular can be defined in many ways. One of them is JavaScript code which runs when the application is presented in the browser. All the code you will write - components, modules, services, etc. will be recognized by Angular. Angular will perform actions accordingly. For example, components you will write and use will be compiled to JavaScript functions. These functions insert the component content into the DOM \(Document Object Model\) - the representation of the page structure in the computer's memory, which the browser uses to show the application. That's how you'll see the component you created on the screen.
+> Angular can be defined in many ways. One of them is JavaScript code which runs when the application is presented in the browser. All the code you will write - components, modules, services, etc. are recognized by Angular. Angular will perform actions accordingly. For example, components you will write and use will compile to JavaScript functions. These functions insert the component content into the DOM \(Document Object Model\) - the representation of the page structure in the computer's memory, which the browser uses to show the application. That's how you'll see the component you created on the screen.
 
 So `<app-root>` is not an HTML element, it is an Angular Component. When the application is ready, the content of the component is inserted inside the `<app-root>` tag, and you will see it in the browser:
 
@@ -25,13 +25,13 @@ The last line in the file defines a JavaScript class:
 export class AppModule { }
 ```
 
-`export` is a reserved word in JavaScript which tells that whatever is defined after it should be exposed to other files which import this one using the `import` statement. You can see examples of classes and functions imported from other files in the first lines in this file. These are used in the file.
+`export` is a reserved word in JavaScript. It exposes whatever is defined after the `export` keyword, in this case the class `AppModule`, so that other files can use the exposed code using the `import` statement. You can see examples of classes and functions imported from other files in the first lines in this file. These are used in the file.
 
 The class `AppModule` is empty. It will get its functionality from Angular, which will identify its role by the code preceding this line, starting with `@NgModule({`.
 
 Every entity in Angular \(NgModule, components, services, directives and pipes\) is just a **class with a decorator**. The decorator tells Angular what is the role of this class.
 
-`@NgModule({...})` is a decorator. A decorator is just a function. When using it we put `@` before its name. This way it becomes a decorator: it looks at what is written right after the function call and receives it as an argument. Decorators usually do something with what they decorate. In this case, for example, `NgModule` receives the `AppModule` class and adds to it methods and members that later on will be used by Angular. This way, Angular will recognize that this class represents an NgModule.
+`@NgModule({...})` is a decorator. A decorator is just a function. When using it we put `@` before its name. This way it becomes a decorator: it looks at what is written right after the function call and receives it as an argument. Decorators usually do something with what they decorate. For example, in this case `NgModule` receives the `AppModule` class and adds to it methods and members that later on will be used by Angular. This way Angular will recognize that this class represents an NgModule.
 
 What we pass into the decorator function is used by Angular to decorate the class. You can see we pass an object with members, each member is a list of other classes. We'll explain shortly what each member represents.
 

@@ -1,6 +1,6 @@
 # \#0: 💃 Introduction
 
-Angular is much more than a framework. It's a whole platform for creating applications that can run not only on a browser, but anywhere. It gives you tools to advanced capabilities, such as easily creating dynamic components, routes definitions and much more.
+Angular is much more than a framework. It's a whole platform for creating applications that can run anywhere, not only on a browser. It gives you tools to advanced capabilities, such as easily creating dynamic components, routes definitions and much more.
 
 ![](.gitbook/assets/angular.png)
 
@@ -14,7 +14,7 @@ The list is saved in the browser's local storage. All the changes will remain ev
 
 ![](.gitbook/assets/todo-app-final%20%281%29.gif)
 
-You will even publish the application on the Web, so that other could use it!
+You will even publish the application on the Web, so that others can use it!
 
 ## And afterwards?
 
