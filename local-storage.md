@@ -104,7 +104,7 @@ This method will get and return the data \(object, list, etc.\) stored in the se
 {% code-tabs-item title="src/app/services/storage.service.ts" %}
 ```typescript
   getData(key: string): any {
-    return JSON.parse(localStorage.getItem(key));  
+    return JSON.parse(localStorage.getItem(key));
   }
 ```
 {% endcode-tabs-item %}
@@ -294,13 +294,13 @@ export class TodoListService {
 
   addItem(item: TodoItem) {
     this.todoList.push(item);
-    this.storageService.setData(todoListStorageKey, this.todoList);
+    this.saveList();
   }
 
   updateItem(item, changes) {
     const index = this.todoList.indexOf(item);
     this.todoList[index] = { ...item, ...changes };
-    this.storageService.setData(todoListStorageKey, this.todoList);
+    this.saveList();
   }
 
   deleteItem(item) {

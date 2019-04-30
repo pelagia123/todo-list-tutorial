@@ -36,6 +36,8 @@ Now, in order for the checkbox to do anything, we need to add a `click` event ha
 
 When we click on the checkbox, it will run the `completeItem` method. Let's talk about what this method needs to accomplish. We want to be able to toggle some CSS styling on the item's title so that when the checkbox is checked it will have a strikethrough. We also want to save the status of the item in the local storage. In order to achieve this, we will emit an update event with the new status of the item and catch it in the parent component.
 
+{% code-tabs %}
+{% code-tabs-item title="src/app/todo-item/todo-item.component.ts" %}
 ```javascript
 export class TodoItemComponent implements OnInit {
   @Input() item: TodoItem;
@@ -50,6 +52,8 @@ export class TodoItemComponent implements OnInit {
     });
   }
 ```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
 
 But wait! How is any of this going to affect the todo title when we're only touching the checkbox? Well, Angular has this wonderful directive called NgClass. This directive applies or removes a CSS class based on a boolean \(true or false\) expression. There are many ways to use this directive \(see the [NgClass directive documentation](https://angular.io/api/common/NgClass)\) but we will focus on using it like so:
 
@@ -82,7 +86,7 @@ Next step is to tell the parent element list-manager what to do, when update eve
 ```markup
 <app-todo-item [item]="todoItem"
                (remove)="removeItem($event)"></app-todo-item>
-</div>
+</li>
 ```
 {% endcode-tabs-item %}
 {% endcode-tabs %}
@@ -95,12 +99,12 @@ Next modifications:
 <app-todo-item [item]="todoItem"
              (remove)="removeItem($event)"
              (update)="updateItem($event.item, $event.changes)"></app-todo-item>
-</div>
+</li>
 ```
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
-And create additional method to handle this update item event. Very similar to removeItem function:
+And create additional method to handle this update item event. Very similar to `removeItem` function:
 
 {% code-tabs %}
 {% code-tabs-item title="src/app/list-manager/list-manager.component.ts" %}
