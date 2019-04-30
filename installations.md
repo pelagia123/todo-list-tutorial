@@ -117,7 +117,7 @@ ng new todo-list
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
-Angular CLI will ask a couple of questions to help create a new application. Answer the questions as shown below:
+(Depending on installation) Angular CLI will ask a couple of questions to help create a new application. Answer the questions as shown below:
   1. Would you like to add Angular routing? (y/N): **N**
   1. Which stylesheet format would you like to use? (Use arrow keys): **CSS** (Press Enter to select **CSS**)
 
