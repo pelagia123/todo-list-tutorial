@@ -25,12 +25,7 @@ Choose the IDE you'd like to work with and follow the installation instructions 
 
 ### **Plugins**
 
-Plugins help the IDE understand the code. Webstorm ships with the necessary plugins. If you choose to use VS Code, we recommend to install following Plugins for Angular:
-
-* [Angular.ng-template](https://marketplace.visualstudio.com/items?itemName=Angular.ng-template)
-* [natewallace.angular2-inline](https://marketplace.visualstudio.com/items?itemName=natewallace.angular2-inline)
-
-![VS Code Plugins for Angular](https://github.com/ng-girls/todo-list-tutorial/raw/master/assets/VS-Code-Plugins.png)
+Plugins help the IDE understand the code. Webstorm ships with the necessary plugins. If you choose to use VS Code, we recommend to install the [Angular Essentials extension pack](https://marketplace.visualstudio.com/items?itemName=johnpapa.angular-essentials)
 
 ## NodeJS and NPM
 
