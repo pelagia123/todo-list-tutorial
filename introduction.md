@@ -6,7 +6,7 @@ Angular is much more than a framework. It's a whole platform for creating applic
 
 In this tutorial you'll learn how to develop a basic application using Angular. You will get to know the building blocks to have a working application: modules, components and services. The Angular CLI will help you in the process in many ways and will simplify the development process.
 
-## Our goal 
+## Our goal
 
 By the end of this tutorial, you'll have a ready todo-list application, that shows a list of items and lets you add or delete items. You will even be able to change the title of an existing item.
 

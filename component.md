@@ -154,7 +154,7 @@ Let's configure the Angular CLI to give us inline-template as a default. In the 
 
 If you wish to continue this tutorial with templates in separate HTML files, do not run this command, and use the generated `.html` files for the templates.
 
-> **Note:** You can specify that you'd like to use inline-template throughout the project in several ways:
+> **Background:** You can specify that you'd like to use inline-template throughout the project in several ways:
 >
 > * When generating a project, pass the flag `-it` or `--inline-template` like this: `ng new todo-list -it`
 > * After generating a project, add it to the configuration so that components generated from this point on will have an inline template: `ng config projects.YOURPROJECTNAME.schematics.@schematics/angular:component.inlineTemplate true`. This adds the line `inlineTemplate: true` in the Angular CLI configuration file `angular.json`. You can also edit the file directly.
