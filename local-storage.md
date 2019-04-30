@@ -59,7 +59,9 @@ The new file, `storage.service.ts`, will be created with the following code:
 ```typescript
 import { Injectable } from '@angular/core';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class StorageService {
 
   constructor() { }
@@ -69,30 +71,7 @@ export class StorageService {
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
-If something looks unfamiliar or odd to you, please refer to the [Creating a Service chapter](creating-a-service.md) for more detailed information about services.
-
-We need to provide the service in our NgModule. Open `app.module.ts` and add the new class to the `providers` list:
-
-{% code-tabs %}
-{% code-tabs-item title="src/app/app.module.ts" %}
-```typescript
-providers: [
-  TodoListService, 
-  StorageService
-],
-```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
-
-Make sure the class is also imported into the file:
-
-{% code-tabs %}
-{% code-tabs-item title="src/app/app.module.ts" %}
-```typescript
-import { StorageService } from './services/storage.service';
-```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+If something looks unfamiliar or confusing to you, please refer to the [Creating a Service chapter](creating-a-service.md) for more detailed information about services.
 
 Since we cannot access an item on the list directly in the local storage, we'll implement only two methods: getting the data and setting the data. Changing the list will be done by the TodoListService. To each method we'll pass the key \(name\) of the data we want.
 
@@ -154,7 +133,9 @@ const defaultTodoList = [
   {title: 'deploy app'},
 ];
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class TodoListService {
   todoList: TodoItem[];
 

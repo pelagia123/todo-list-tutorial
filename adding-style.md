@@ -68,7 +68,7 @@ ol, ul {
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
-> How does the project know to look at this file? In the Angular CLI configuration file `.angular-cli.json` under `apps[0].styles`, you can state the files for the build tool to take and add to the project. You can open the browser's dev tools and see the style inside the element:
+> How does the project know to look at this file? In the Angular CLI configuration file `angular.json` under `projects.todo-list.architect.build.options.styles`, you can state the files for the build tool to take and add to the project. You can open the browser's dev tools and see the style inside the element:
 >
 > ```markup
 > <html>
