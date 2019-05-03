@@ -25,4 +25,6 @@
 * [\#21: 💪 Enrich the todo-item component](enrich-the-todo-item-component.md)
 * [Appendix 1: Generating a new project](appendix-1-generating-a-new-project.md)
 * [Appendix 2: Tutorial Extensions](appendix-2-tutorial-extensions.md)
+* [Troubleshooting](troubleshooting/index.md)
+  * [Installation](troubleshooting/installation.md)
 
