@@ -10,6 +10,8 @@
 * [\#6: 📥 Property binding](property-binding.md)
 * [\#7: 📤Event binding](event-binding.md)
 * [\#8: 📎 Element ref - \#](element-ref.md)
+  * [About](08_element_ref/about.md)
+  * [Explore](08_element_ref/explore.md)
 * [\#9: 📋 The To Do list](the-to-do-list.md)
 * [\#10: ➕ New component: todo-item](new-component-todo-item.md)
 * [\#11: ⛓ Interface](interface.md)
