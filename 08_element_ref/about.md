@@ -27,7 +27,4 @@ changeTitle(inputElementReference) {
 
 Don't forget to put the code back the way it was after you're finished experimenting! It's best to pass to a method exactly the value it needs, instead of the whole object.
 
-## Resources
-
-[Angular Template Reference Variables](https://angular.io/guide/template-syntax#template-reference-variables--var-)
 
