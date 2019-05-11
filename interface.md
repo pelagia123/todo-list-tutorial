@@ -68,15 +68,16 @@ Now, let's define the list of todo items to contain objects of the `TodoItem` ty
 {% code-tabs-item title="src/app/app.component.ts" %}
 ```typescript
 export class AppComponent {
-title = 'app';
-todoList: TodoItem[] = [
-  {title: 'install NodeJS'},
-  {title: 'install Angular CLI'},
-  {title: 'create new app'},
-  {title: 'serve app'},
-  {title: 'develop app'},
-  {title: 'deploy app'},
-];
+  title = 'app';
+  todoList: TodoItem[] = [
+    {title: 'install NodeJS'},
+    {title: 'install Angular CLI'},
+    {title: 'create new app'},
+    {title: 'serve app'},
+    {title: 'develop app'},
+    {title: 'deploy app'},
+  ];
+}
 ```
 {% endcode-tabs-item %}
 {% endcode-tabs %}
