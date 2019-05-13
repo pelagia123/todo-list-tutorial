@@ -13,7 +13,10 @@ If you already have a GitHub user you can skip this step. To Create a GitHub use
 
 ## Create your App repository
 
-After logging in to GitHub. Click on the `Start a project` button, and name the repository `ng-girls-todo` or any other name you like.
+After logging in to GitHub. Click on the `Start a project` button, and name the repository `ng-girls-todo` or any other name you like. 
+
+***Tip*** GitHub Pages are case sensitive - it's the best to use lowercase letters in repository name.
+
 
 ## Connecting your repository
 
@@ -45,12 +48,30 @@ ng build --prod --base-href="/[your-repo-name]/"
 angular-cli-ghpages --dir=dist/todo-list
 ```
 
-Your app will be available at \[[https://\[your-GH-username\].github.io/\[repo-name\]\(https://\[your-GH-username\].github.io/\[repo-name\]\](https://[your-GH-username].github.io/[repo-name]%28https://[your-GH-username].github.io/[repo-name%29\)\]
+Your app will be available at [https://[your-GH-username].github.io/[repo-name]/](https://[your-GH-username].github.io/[repo-name])
 
 For more information see [https://github.com/angular-schule/angular-cli-ghpages](https://github.com/angular-schule/angular-cli-ghpages).
 
 ## Known Issues
 
+### Blank screen (and 404 error in DevTools in Browser)
+If deploy succedeed but you see blank page in browser you probably used capitalized letters in your repository name. Try to add new repository with only lowercase letters from GitHub website. Later on remove connection to old one from your local files by typing:
+```
+git remote rm
+```
+in terminal. Add connection to new repository
+```
+git remote add origin https://github.com/{YOUR_USERNAME}/{YOUR_REPO}.git
+git push -u origin master
+```
+And build website again:
+```
+ng build --prod --base-href="/[your-repo-name]/"
+angular-cli-ghpages --dir=dist/todo-list
+```
+
+
+### Problem on Windows
 On \(windows\) machines you might run into an issue like the following:
 
 ```text
@@ -75,4 +96,3 @@ you can do the following
    ```text
    angular-cli-ghpages --repo=https://<personal-access-token>@github.com/organisation/your-repo.git --name="Displayed Username" --email=mail@example.org
    ```
-
