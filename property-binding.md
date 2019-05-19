@@ -69,7 +69,7 @@ You can go on to the next chapter, but if you'd like to learn more about change 
 
 Angular has a very efficient change detection mechanism. It looks for bindings in the components' templates, and then updates the value each time the bound expression is changed.
 
-To show this, let's change the value of the title after a few seconds and see what happens. Call the `setTimeout` function inside `ngOnInit`:
+![lab-icon](.gitbook/assets/lab%20%281%29.jpg) **Playground**: To show this, let's change the value of the title after a few seconds and see what happens. Call the `setTimeout` function inside `ngOnInit`:
 
 ```typescript
 ngOnInit() {
@@ -79,7 +79,7 @@ ngOnInit() {
 }
 ```
 
-`setTimeout` is a JavaScript function. Its first parameter is what we want to happen - a function of our choice. The second parameter is how much we want to delay it, in milliseconds. In this example, we pass an inline anonymous function which sets the value of `this.title`. For this we use one of the new features in JavaScript ES6: an **arrow function**.
+`setTimeout` is a JavaScript function. Its first parameter is what we want to happen - a function of our choice. The second parameter is how much we want to delay it, in milliseconds. In this example, we pass an **inline anonymous function** which sets the value of `this.title`. For this we use one of the new features in JavaScript ES6: an **arrow function**.
 
 ## Binding to Methods
 
@@ -111,20 +111,28 @@ So for now, we have our input control show the title of our todo in it. We now w
 
 Using regular JavaScript, we can insert the value to the input via its properties. We'll fetch the element from the DOM and assign the value of the member `title` to the element's `value` property.
 
+{% code-tabs %}
+{% code-tabs-item title="code for example" %}
 ```typescript
-let inputElement = document.getElementById('#my-input');
+let inputElement = document.getElementById('my-input');
 inputElement.value = this.title;
 ```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
 
 In JavaScript, we find the `input` element in the DOM by its id, and then set its `value` property to the value of the title property. We need to add the id to the `input` element then:
 
+{% code-tabs %}
+{% code-tabs-item title="code for example" %}
 ```markup
 <input id="my-input">
 ```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
 
-Excellent.
+This will work in the browser.
 
-However, **this is highly discouraged in Angular. You should never access the DOM directly!** That's because you can assign different renderers to Angular and run the application on different platforms. They may be mobile, desktop, or even a robot. And they will not have a `document` object from which you can manipulate the result!
+However, **this is highly discouraged in Angular. You should never access the DOM directly!** That's because you can assign different renderers to Angular and run the application on different platforms. They may be renderers for mobile, desktop, or even a robot. These platforms will not have a `document` object from which you can manipulate the result!
 
 {% hint style="success" %}
 [See the results on StackBlitz](https://stackblitz.com/github/angularbootcamp/todo-list-tutorial-steps/tree/step-06_Property_binding)
