@@ -17,7 +17,7 @@ Directives, pipes, and services are other building blocks in Angular, which we w
 Let's take a look at the component that was created by the Angular CLI. All the relevant files exist in the folder 📁**src/app** . Open the file   
 ![](.gitbook/assets/component.svg) **app.component.ts** .
 
-Just like ngModules that we saw in the previous chapter, a component is also defined by a class with a decorator. This is the class definition:
+Just like NgModules that we saw in the previous chapter, a component is also defined by a class with a decorator. This is the class definition:
 
 {% code-tabs %}
 {% code-tabs-item title="app.component.ts" %}
@@ -71,7 +71,7 @@ Let's go back to the file ![](.gitbook/assets/component.svg) **app.component.ts*
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
-We pass an object of definitions to the decorator, just like we saw in the previous chapter with ngModule. The second property, `templateUrl`, tells Angular where to look for the template attached to the component. There is another option to point to the template, which we'll discuss later: to write the whole template inline here, in the component definition.
+We pass an object of definitions to the decorator, just like we saw in the previous chapter with NgModule. The second property, `templateUrl`, tells Angular where to look for the template attached to the component. There is another option to point to the template, which we'll discuss later: to write the whole template inline here, in the component definition.
 
 The third property, `styleUrls`, tells Angular where to look for the CSS files that define the style of this component. It can have multiple CSS files. That's why the value of `styleUrls` is an array. You can take a look at the CSS file ![](.gitbook/assets/css.svg) **app.component.css** - you'll see that it's empty. You can add some CSS style here, for example:
 

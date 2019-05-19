@@ -52,7 +52,7 @@ export class TodoListStorageService {
 
 **If something looks unfamiliar/odd to you, please refer to the** [**Service chapter**](service.md) **for more detailed information about services.**
 
-We need to provide the service in our ngModule. Open ![](.gitbook/assets/module.svg)**app.module.ts** and add the new class to the `providers` list:
+We need to provide the service in our NgModule. Open ![](.gitbook/assets/module.svg)**app.module.ts** and add the new class to the `providers` list:
 
 {% code-tabs %}
 {% code-tabs-item title="app.module.ts" %}

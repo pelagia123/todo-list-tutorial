@@ -14,7 +14,7 @@ If you're using Stackblitz, right click on the app folder, and select "Service".
 
 ## Make the service a provider
 
-To start using the service, we first need to _provide_ it in an ngModule. Start by adding this code in ![](.gitbook/assets/module.svg) **app.module.ts**:
+To start using the service, we first need to _provide_ it in an NgModule. Start by adding this code in ![](.gitbook/assets/module.svg) **app.module.ts**:
 
 {% code-tabs %}
 {% code-tabs-item title="app.module.ts" %}
@@ -24,7 +24,7 @@ import { TodoListService } from './todo-list.service';
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
-Next, add the service to the `providers` array, so that the ngModule looks like this:
+Next, add the service to the `providers` array, so that the NgModule looks like this:
 
 {% code-tabs %}
 {% code-tabs-item title="app.module.ts:" %}
