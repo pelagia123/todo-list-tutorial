@@ -20,7 +20,7 @@ Let's take a look at the component that was created by the Angular CLI. All the 
 Just like ngModules that we saw in the previous chapter, a component is also defined by a class with a decorator. This is the class definition:
 
 {% code-tabs %}
-{% code-tabs-item title="app.component.ts" %}
+{% code-tabs-item title="src/app/app.component.ts" %}
 ```typescript
 export class AppComponent {
   title = 'todo';
@@ -34,7 +34,7 @@ It has one member called "title". It is a property to which you can assign a val
 Angular takes care of synchronizing the members of the component with the component template. So we can easily use the member `title` in the template. Take a look at the template attached to the component in the file ![](.gitbook/assets/html.svg) **app.component.html**. Near the top, you'll see code like this:
 
 {% code-tabs %}
-{% code-tabs-item title="app.component.html" %}
+{% code-tabs-item title="src/app/app.component.html" %}
 ```markup
 <h1>
   Welcome to {{ title }}!
@@ -45,7 +45,7 @@ Angular takes care of synchronizing the members of the component with the compon
 
 The double curly braces and their content are called **Interpolation**. This is one form of **data binding** in Angular. As we mentioned before, the code in this file is not used as-is when the browser renders the component. Angular compiles it to JavaScript code. In one of the compilation steps, it looks for Interpolations inside the template. The content of the Interpolation is an "Angular template expression" \(which is a lot like JavaScript\). The expression is evaluated at runtime, and then you see the result.
 
-Interpolation is one of the strongest, most basic features in Angular. It has existed from the very beginning of Angular - in the first version. It makes it really simple to insert dynamic data into the view.
+Interpolation is one of the strongest, most basic features in Angular. It has existed from the very beginning of Angular - in the first version \(AngularJS\). It makes it really simple to insert dynamic data into the view.
 
 In this component, the expression is simply the member of the component class, `title`. **Let's try to change it.** Try out the following and see the result in the browser. \(With every change you make in the file, the browser will refresh automatically!\)
 
@@ -60,7 +60,7 @@ This is one way that you can bind members of the component's controller to its t
 Let's go back to the file ![](.gitbook/assets/component.svg) **app.component.ts** and look at the component's metadata defined in the decorator `@Component` right above the class definition:
 
 {% code-tabs %}
-{% code-tabs-item title="app.component.ts" %}
+{% code-tabs-item title="src/app/app.component.ts" %}
 ```typescript
 @Component({
   selector: 'todo-root',
@@ -76,7 +76,7 @@ We pass an object of definitions to the decorator, just like we saw in the previ
 The third property, `styleUrls`, tells Angular where to look for the CSS files that define the style of this component. It can have multiple CSS files. That's why the value of `styleUrls` is an array. You can take a look at the CSS file ![](.gitbook/assets/css.svg) **app.component.css** - you'll see that it's empty. You can add some CSS style here, for example:
 
 {% code-tabs %}
-{% code-tabs-item title="app.component.css" %}
+{% code-tabs-item title="src/app/app.component.css" %}
 ```css
 h1 {
   color: red;
@@ -85,12 +85,12 @@ h1 {
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
-We'll add more style later on.
+We'll add more styles later on.
 
 The first property, `selector`, tells Angular what will be the name of the tag that we'll use to call the component. As we saw in the file ![](.gitbook/assets/html.svg) **index.html** , we use the app component inside the body:
 
 {% code-tabs %}
-{% code-tabs-item title="index.html" %}
+{% code-tabs-item title="src/index.html" %}
 ```markup
 <body>
   <todo-root></todo-root>
@@ -109,7 +109,7 @@ Let's move the template to be **inline** in the component definition. This will 
 ![](.gitbook/assets/component.svg) **app.component.ts** replace the line
 
 {% code-tabs %}
-{% code-tabs-item title="app.component.ts" %}
+{% code-tabs-item title="src/app/app.component.ts" %}
 ```typescript
 templateUrl: './app.component.html',
 ```
@@ -119,42 +119,26 @@ templateUrl: './app.component.html',
 with
 
 {% code-tabs %}
-{% code-tabs-item title="app.component.ts" %}
+{% code-tabs-item title="src/app/app.component.ts" %}
 ```typescript
 template: ``,
 ```
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
-Notice the **backticks** - they are used to define Template Literals, which are new in JavaScript \(ES6\). This way you can define multi-line strings. They have another cool ability: to easily use JavaScript variables and expressions within the string \(with no relation to Angular binding expressions in the template\). Read about it in the [MDN documentation](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Template_literals).
+Notice the **backticks** - **\`** - they are used to define Template Literals, which are new in JavaScript \(ES6\). This way you can define multi-line strings. They have another cool ability: to easily use JavaScript variables and expressions within the string \(with no relation to Angular binding expressions in the template\). Read about it in the [MDN documentation](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Template_literals).
 
 Make sure you replace `templateUrl` with `template`, and don't forget the comma at the end of the line.
 
-Now copy the entire template from ![](.gitbook/assets/html.svg) **app.component.html** and paste it between the backticks. We'll reformat the code a bit to have it easier on the eye:
+Now instead of taking the content from the original template, we'll insert a more simple template which we can work with. When the cursor is between the backticks, press Enter and insert the HTML template:
 
 {% code-tabs %}
-{% code-tabs-item title="app.component.ts" %}
-```typescript
+{% code-tabs-item title="src/app/app.component.ts" %}
+```markup
 template: `
-  <!--The content below is only a placeholder and can be replaced.-->
-  <div style="text-align:center">
-    <h1>
-      Welcome to {{ title }}!
-    </h1>
-    <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-  </div>
-  <h2>Here are some links to help you start: </h2>
-  <ul>
-    <li>
-      <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-    </li>
-    <li>
-      <h2><a target="_blank" rel="noopener" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-    </li>
-    <li>
-      <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-    </li>
-  </ul>
+  <h1>
+    Welcome to {{ title }}!
+  </h1>  
 `,
 ```
 {% endcode-tabs-item %}
@@ -162,21 +146,11 @@ template: `
 
 It is easier to manage the template when you see its controller at the same time. This is true as long as the template doesn't get too big and the controller doesn't get too complicated. If they do, it's a sign you should refactor your code by breaking it down to child components.
 
-In fact, there's a lot of stuff we don't need in this template, so let's get rid of most of it:
-
-{% code-tabs %}
-{% code-tabs-item title="app.component.ts" %}
-```typescript
-template: `
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-`,
-```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
-
 At this point you can ✂ delete the file ![](.gitbook/assets/html.svg) **app.component.html**.
+
+**We recommend continuing this tutorial using inline templates in the components.** Especially if you're working on a laptop with a small screen, where there isn't enough space to open two files side-by-side.
+
+If you wish to continue this tutorial with templates in separate HTML files, do not change the `templateUrls` property to `template` as instructed, and use the generated **.html** files for the templates.
 
 The same way we use inline templates, we can use also inline styles. But for now we will keep the styles in a separate file.
 
