@@ -39,7 +39,7 @@ Now we want to take the value of the input \(that the user typed\) and change th
 
 We already know how to create a button and react to clicking on it. We now need to pass to the method some data from a different element. We want to use the `input` element's value from inside the `button` element.
 
-Angular helps us do exactly that. **We can store a reference to the element we want in a variable with the name we choose, for example** `inputElement`**, using a simple syntax - a hash.** Add `#inputElement` to the `input` element, and use it in the `click` event of the button:
+Angular helps us do exactly that. **We can store a reference to the element we want in a variable with the name we choose,** for example `inputElement`, **using a simple syntax - a hash.** Add `#inputElement` to the `input` element, and use it in the `click` event of the button:
 
 {% code-tabs %}
 {% code-tabs-item title="input.component.ts" %}
@@ -67,7 +67,9 @@ Next, we'll build the list of todo items.
 
 ## 🧪 Tip - explore the element reference
 
-Just like we did in the previous chapter, when we logged `$event`, you can do the same with `#inputElement`. Change the method `changeTitle` so it will receive the whole element reference and log it to the console:
+Just like we did in the previous chapter, when we logged `$event`, you can do the same with `#inputElement`. 
+
+**Playground:** Change the method `changeTitle` so it will receive the whole element reference and log it to the console:
 
 {% code-tabs %}
 {% code-tabs-item title="input.component.ts" %}
@@ -94,7 +96,7 @@ changeTitle(inputElementReference): void {
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
-Don't forget to put the code back the way it was after you're finished experimenting!
+Don't forget to put the code back the way it was after you're finished experimenting! It's best to pass to a method exactly the value it needs, instead of the whole object.
 
 ## Resources
 
