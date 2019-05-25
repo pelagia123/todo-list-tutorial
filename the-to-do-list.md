@@ -1,9 +1,9 @@
 # \#9: 📋 The To Do list
 
-Now you are going to add the todo-list itself to the component `todo-root`. Open the file ![](.gitbook/assets/component.svg) **app.component.ts**. Add the list of items inside the `AppComponent` class as an array of objects for each item. At this stage, each item only contains a title:
+Now you are going to add the todo-list itself to the component `todo-root`. Open the file ![](.gitbook/assets/component.svg) **src/app/app.component.ts**. Add the list of items inside the `AppComponent` class as an array of objects for each item. At this stage, each item only contains a title:
 
 {% code-tabs %}
-{% code-tabs-item title="app.component.ts" %}
+{% code-tabs-item title="src/app/app.component.ts" %}
 ```typescript
 todoList = [
   {title: 'install NodeJS'},
@@ -21,10 +21,10 @@ todoList = [
 
 Now you have to tell the browser to display those items. For this, you will use the **Angular built-in directive,** `*ngFor`. It works like an enhanced loop in Java. The `*` notation causes Angular to use the current element as a template when rendering the list.
 
-Insert the loop right after `<todo-input></todo-input>`, this way:
+Insert the loop right after `<todo-input></todo-input>` like this:
 
 {% code-tabs %}
-{% code-tabs-item title="app.component.ts" %}
+{% code-tabs-item title="src/app/app.component.ts" %}
 ```markup
 <todo-input></todo-input>
 <ul>
@@ -36,7 +36,7 @@ Insert the loop right after `<todo-input></todo-input>`, this way:
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
-This means "go over all items of the todoList array, and print out an unnumbered list which contains the items' titles". While looping over the `todoList`, each item is assigned to the variable `item`, and we can use this variable inside the `li` element and its children.
+This means "go over all items of the todoList array, and print a list which contains the items' titles". While looping over the `todoList`, each item is assigned to the variable `item`, and we can use this variable inside the element in which we define it (in this case the `li` element) and its children.
 
 ## Angular directives
 
@@ -44,9 +44,14 @@ Directives are pieces of logic \(written as classes\) that can be attached to el
 
 As we saw, the `ngFor` directive modifies the template at runtime by repeating the element it's called on and its content. Another directive, for example, is `ngIf`, which receives a Boolean expression. Angular will only render the element and its content if the expression is true. It also needs the `*` prefix because it uses the target element as a template, similar to the `*ngFor` directive. For example:
 
+{% code-tabs %}
+{% code-tabs-item title="code for example" %}
 ```markup
 <h1 *ngIf="userLoggedIn">Welcome!</h1>
 ```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
+
 
 In this example, `userLoggedIn` should be a member of the component, and have a true or false value. If it's true, the `h1` element will be displayed. If false, the element will not exist in the DOM.
 
