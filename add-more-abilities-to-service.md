@@ -1,13 +1,13 @@
 # \#16: 🎁 Add Items Using the Service
 
-In this chapter, we'll improve our service by adding more abilities.
+Let's improve our service by adding more abilities that will be used by our components. First - we'll implement adding an item to the list.
 
-First, lets open our app's service file, which is available at ![](.gitbook/assets/service.svg) **todo-list.service.ts**.
+## Adding an item
 
-There we'll add a new method to the service, called `addItem`, like so:
+We'll add a new method to the service, called `addItem`, like so:
 
 {% code-tabs %}
-{% code-tabs-item title="todo-list.service.ts" %}
+{% code-tabs-item title="src/app/todo-list.service.ts" %}
 ```typescript
 addItem(item): void {
   this.todoList.push(item);
@@ -16,12 +16,10 @@ addItem(item): void {
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
-This will allow us to call the same method from everywhere across the application, thus making our app easier to maintain.
-
-And now we can change our code in ![](.gitbook/assets/component.svg) **list-manager.component.ts** to call the `addItem` method directly from the service like so:
+Now we can change our code in ![](.gitbook/assets/component.svg) **list-manager.component.ts** to call the `addItem` method directly from the service like so:
 
 {% code-tabs %}
-{% code-tabs-item title="list-manager.component.ts" %}
+{% code-tabs-item title="src/app/list-manager/list-manager.component.ts" %}
 ```typescript
 addItem(title): void {
   this.todoListService.addItem({ title });
@@ -30,6 +28,7 @@ addItem(title): void {
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
+* Note that the service's method expects the whole item, while the component's method expects only the title and constructs the item. \(You may decide to let the service construct the item from the title.\)
 * There may be additional logic when calling these methods, i.e. saving the changes in a database \(which we'll implement later\).
 * A better way to handle data is using _immutable objects_, but that's a bigger topic than we can cover in this tutorial at the moment.
 
