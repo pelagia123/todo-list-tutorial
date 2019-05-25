@@ -8,13 +8,19 @@ Angular takes care of creating instances of the classes you define - if they are
 
 Each time you use a component in a template, a new instance of it is created. For example, here three instances of the `InputComponent` class will be created:
 
+{% code-tabs %}
+{% code-tabs-item title="src/app/app.component.ts" %}
 ```markup
+// example only
+
 template: `
   <todo-input></todo-input>
   <todo-input></todo-input>
   <todo-input></todo-input>
 `
 ```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
 
 Let's take a look at the class `InputComponent`.
 
@@ -61,15 +67,13 @@ In TypeScript, we must declare members of the class either in the class body out
 
 You can declare a property without initializing it:
 
-{% code-tabs %}
-{% code-tabs-item title="input.component.ts" %}
 ```typescript
 title: string;
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
 
-Then you can assign a value at a later stage, for example in the constructor or in the `ngOnInit` method. When referencing a member of the class from within a class method, you must prefix it with `this`. It's a special property that points at the current instance.
+Then you can assign a value at a later stage, for example in the constructor or in the `ngOnInit` method. Here we explicitly noted that `title` is of the type `string`. \(The type is inferred by TypeScript when we immediately assign a value, so there's no need to add the type in this case.\)
+
+When referencing a member of the class from within a class method, you must prefix it with `this`. It's a special property that points at the current instance.
 
 Try setting a different value for `title` from inside the constructor. See the result in the browser:
 
@@ -94,33 +98,35 @@ Let's add a method that changes the value of `title` according to the argument w
 {% code-tabs %}
 {% code-tabs-item title="input.component.ts" %}
 ```typescript
-changeTitle(newTitle: string): void {
+changeTitle(newTitle: string) {
   this.title = newTitle;
 }
 ```
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
-The method is called `changeTitle`. It doesn't have a return statement, so we noted that it "returns void". We can change that if we return an actual value. For example:
+**Note:** Functions and Methods can return a value that can be used when the method is called. For example:
 
 {% code-tabs %}
-{% code-tabs-item title="input.component.ts" %}
+{% code-tabs-item title="code for example" %}
 ```typescript
-changeTitle(newTitle: string): string {
-  this.title = newTitle;
-  return this.title;
+function multiply (x: number, y: number) {
+  return x * y;
 }
+
+let z = multiply(4, 5);
+console.log(z);
 ```
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
-This method is not used anywhere. We can call it from another method or from the template \(which we will see in the following chapters\). Let's call it from the constructor.
+The method `changeTitle` is not used anywhere yet. We can call it from another method or from the template \(which we will see in the following chapters\). Let's call it from the constructor.
 
 {% code-tabs %}
 {% code-tabs-item title="input.component.ts" %}
 ```typescript
-constructor() {
-  this.changeTitle('I love Angular');
+constructor() { 
+  this.changeTitle('My First Angular App');
 }
 ```
 {% endcode-tabs-item %}
@@ -141,6 +147,11 @@ constructor() {
   console.log('in constructor');
   this.changeTitle('I love Angular');
   console.log(this.title);
+}
+
+changeTitle(newTitle: string) {
+  console.log(newTitle);
+  this.title = newTitle;
 }
 ```
 {% endcode-tabs-item %}
