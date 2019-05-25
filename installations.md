@@ -76,7 +76,7 @@ When asked if you'd like to install **git bash**, say yes.
 
 ## Angular CLI
 
-The [Angular CLI](https://github.com/angular/angular-cli) is a powerful tool that simplifies a lot of the development process. It also installs libraries you'll use in your current and future projects. Install it by running:
+The [Angular CLI](https://cli.angular.io) is a powerful tool that simplifies a lot of the development process. It also installs libraries you'll use in your current and future projects. Install it by running:
 
 {% code-tabs %}
 {% code-tabs-item title="command-line" %}
