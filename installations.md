@@ -4,7 +4,7 @@ Every developer needs a set of tools and libraries to start working. In our case
 
 For this please follow these three steps:
 
-1. Register on [GitHub](https://github.com)
+1. Register on [GitHub](https://github.com).
 2. GitHub provides you a social login. So if you want to register on StackBlitz, you can simply use your GitHub account.
 3. Choose in the section "START A NEW PROJECT" on the left of the StackBlitz page the button for Angular.
 
@@ -24,21 +24,21 @@ Now we're ready to start developing!
 
 ## About the Tools
 
-### GitHub
-
-[GitHub](https://github.com/) is a code repository website that integrates with **Git**. It allows you to publish your project on the Web, copy other open source projects, and collaborate. To be able to publish your project, make sure you create a user in GitHub's website \(for free, of course\).
-
 ### Git
 
 Git is a tool that helps you manage versions of your code and collaborate with team members. There is a lot to know about it, but in this tutorial we will cover only basic usage.
 
+### GitHub
+
+[GitHub](https://github.com/) is a code repository website that integrates with **Git**. It allows you to publish your project on the Web, copy other open source projects, and collaborate. To be able to publish your project, make sure you create a user in GitHub's website \(for free, of course\).
+
 ### StackBlitz
 
-StackBlitz is an online editor which provides you all the functionality of an Online-**IDE** called **Visual Studio Code** and the **Angular-CLI**.
+StackBlitz is an online editor which provides you all the functionality of an Online-**IDE** called **Visual Studio Code** and the **Angular CLI**.
 
 ### Angular-CLI
 
-[Angular-CLI](https://github.com/angular/angular-cli) is a powerful tool that simplifies a lot of the development process. It also installs libraries you'll use in your current and future projects. StackBlitz has it integrated out of the box, which makes it easier for you.
+[Angular CLI](https://cli.angular.io) is a powerful tool that simplifies a lot of the development process. It also installs libraries you'll use in your current and future projects. StackBlitz has it integrated out of the box, which makes it easier for you.
 
 ### IDE
 
