@@ -6,7 +6,7 @@ We still don't have a whole list to show, but at the moment we will use another 
 
 ## The Action
 
-First, make sure you've implemented the `changeTitle` method inside the `InputComponent` class. It will receive the new title as its argument:
+First, let's implement `changeTitle`. It will receive the new title as its argument. The best practice is to have our custom methods written after the lifecycle methods \(`ngOnInit` in this case\):
 
 {% code-tabs %}
 {% code-tabs-item title="input.component.ts" %}
@@ -40,7 +40,7 @@ template: `
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
-The event is called `click` and not `onClick` - in Angular, you remove the `on` prefix from the events in the elements.
+> The event is called `click` and not `onClick` - in Angular, you remove the `on` prefix from the events in the elements.
 
 Go to the browser and see the result - click on the Save button.
 
@@ -62,7 +62,9 @@ When the user types, keyboard events are emitted, like `keydown` and `keyup`. We
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
-This element becomes large, so to make it easier on the eye we will split it into two lines:
+Now when the user types in the input box, the title is changed to "Button Clicked!". But it's still a static string.
+
+**Tip:** When an element becomes long due to its attributes, you should make it easier on the eye by splitting it into several lines:
 
 {% code-tabs %}
 {% code-tabs-item title="input.component.ts" %}
@@ -73,13 +75,11 @@ This element becomes large, so to make it easier on the eye we will split it int
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
-Now when the user types in the input box, the title is changed to "Button Clicked!". But it's still a static string.
-
 ### The $event object
 
-Now we just react when the `keyup` event occurs. Angular allows us to get the event object itself. It is passed to the event binding as `$event` - so we can use it when we call `changeTitle`.
+Now we just react when the `keyup` event occurs. Angular allows us to get the event object itself. It is passed to the event binding as `$event` - so we can use it when we call `changeTitle()`.
 
-The event object emitted on `keyup` events has a reference to the element that emitted the event - the `input` element. The reference is kept in the event `target` property. As we've seen before, the `input` element has a `value` property which holds the current string that's in the input box. We can pass `$event.target.value` to the method:
+The event object emitted on `keyup` events has a reference to the element that emitted the event - the input element. The reference is kept in the event `target` property. As we've seen before, the input element has a `value` property which holds the current string that's in the input box. We can pass `$event.target.value` to the method:
 
 {% code-tabs %}
 {% code-tabs-item title="input.component.ts" %}
@@ -94,7 +94,7 @@ Check it out in the browser. Now with every keystroke, you can see the title cha
 
 ### Pressing the Enter key
 
-You can limit the change to only a special keystroke; in our case, it's the Enter key. Angular makes it really easy for us. The `keyup` event has properties which are more specific events. Just add the name of the key you'd like to listen to:
+You can limit the change to only a special keystroke, in our case it's the Enter key. Angular makes it really easy for us. The `keyup` event has properties which are more specific events. Just add the name of the key you'd like to listen to - `keyup.enter`:
 
 {% code-tabs %}
 {% code-tabs-item title="input.component.ts" %}
@@ -107,9 +107,9 @@ You can limit the change to only a special keystroke; in our case, it's the Ente
 
 Now the title will change only when the user hits the Enter key while typing in the input.
 
-### 🧪 Tip - explore the $event
+### Explore the $event
 
- **Playground:** You can change the `changeTitle` method to log the `$event` object in the console. This way you can explore it and see what properties it has.
+![lab-icon](.gitbook/assets/lab%20%281%29.jpg)**Playground:** You can change the changeTitle method to log the `$event` object in the console. This way you can explore it and see what properties it has.
 
 Change the method `changeTitle`:
 
