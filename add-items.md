@@ -13,17 +13,19 @@ So what we actually want to do is to **emit an event** from the `todo-input` com
 Add the following line inside the `InputComponent` class, which defines an output for the component:
 
 {% code-tabs %}
-{% code-tabs-item title="input.component.ts" %}
+{% code-tabs-item title="src/app/input/input.component.ts" %}
 ```typescript
 @Output() submit: EventEmitter<string> = new EventEmitter();
 ```
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
-The output property is called `submit`. Make sure that `Output` and `EventEmitter` are added to the import declaration in the first line of the file:
+The output property is called `submit`. It's of type `EventEmitter` which has the method `emit`. `EventEmitter` is a Generic Type - we pass to it another type which will be used internally, in this case it's `string`. It's the type of the object that will be emitted by the `emit` method.
+
+Make sure that `Output` and `EventEmitter` are added to the import declaration in the first line of the file:
 
 {% code-tabs %}
-{% code-tabs-item title="input.component.ts" %}
+{% code-tabs-item title="src/app/input/input.component.ts" %}
 ```typescript
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 ```
@@ -33,7 +35,7 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 Now, whenever we call `this.submit.emit()`, an event will be emitted to the parent component. Let's call it in the `changeTitle` method:
 
 {% code-tabs %}
-{% code-tabs-item title="input.component.ts" %}
+{% code-tabs-item title="src/app/input/input.component.ts" %}
 ```typescript
 changeTitle(newTitle: string): void {
   this.submit.emit(newTitle);
@@ -51,7 +53,7 @@ Nothing else is changed in the `todo-input` component. The events emitted from `
 Now all we need to do is catch the event in the parent component and attach logic to it. Go to the `todo-root` component and bind to the `submit` event in the `<todo-input>` component:
 
 {% code-tabs %}
-{% code-tabs-item title="app.component.ts" %}
+{% code-tabs-item title="src/app/app.component.ts" %}
 ```typescript
 <todo-input (submit)="addItem($event)"></todo-input>
 ```
