@@ -12,7 +12,7 @@ We will look at:
 Let's go ahead and add a checkbox into our ![](.gitbook/assets/component.svg) **item.component.ts** file. Place the following code right before `{{ todoItem.title }}`:
 
 {% code-tabs %}
-{% code-tabs-item title="item.component.ts" %}
+{% code-tabs-item title="src/app/item/item.component.ts" %}
 ```typescript
   <input type="checkbox"/>
 ```
@@ -31,10 +31,12 @@ Now, in order for the checkbox to do anything, we need to add a `click` event ha
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
-When we click on the checkbox, it will run the `completeItem` method. Let's talk about what this method needs to accomplish. We want to be able to toggle some CSS styling on the todo title so that when the checkbox is checked, it will have a line through it, and no strikethrough line when unchecked. In order to achieve this, we will toggle a variable to be either true or false to represent checked or unchecked states. Add the following code to the `ItemComponent` class:
+When we click on the checkbox, it will run the `completeItem` method. Let's talk about what this method needs to accomplish. We want to be able to toggle some CSS styling on the item's title so that when the checkbox is checked it will have a strikethrough. In order to achieve this, we will emit an update event with the new status of the item and catch it in the parent component. 
+
+Add the following code to the `ItemComponent` class:
 
 {% code-tabs %}
-{% code-tabs-item title="item.component.ts" %}
+{% code-tabs-item title="src/app/item/item.component.ts" %}
 ```typescript
 isComplete: boolean = false;
 
@@ -53,7 +55,7 @@ But wait! How is any of this going to affect the todo title when we're only touc
 
 The 'first' and 'second' class will be applied to the element because they are given a true value, whereas the 'third' class will not be applied because it is given a false value. So this is where our earlier code comes into play. Our `completeItem` method will toggle between true and false values, thus dictating whether a class should be applied or removed.
 
-Let's wrap the item title in a `<span>`, then use NgClass to apply the styling:
+Let's wrap the item title in a `<span>`, then use NgClass to apply the styling. Depending on current item completed field we show line-through decoration or not:
 
 {% code-tabs %}
 {% code-tabs-item title="item.component.ts" %}
@@ -68,7 +70,7 @@ Let's wrap the item title in a `<span>`, then use NgClass to apply the styling:
 And finally, add the CSS to our ![](.gitbook/assets/css.svg) **item.component.css** file:
 
 {% code-tabs %}
-{% code-tabs-item title="item.component.css" %}
+{% code-tabs-item title="src/app/item/item.component.css" %}
 ```css
   .todo-complete {
     text-decoration: line-through;
