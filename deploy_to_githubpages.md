@@ -3,7 +3,7 @@ To deploy our changes to Github pages we will use the angular-cli-ghpages packag
 https://github.com/angular-buch/angular-cli-ghpages 
 
 * You need to have a Github user
-* You need to create a repostiroy for your project.
+* You need to create a repository for your project.
 * You need to commit all the changes you made in the project
 * You need to install angular-cli-ghpages
 
