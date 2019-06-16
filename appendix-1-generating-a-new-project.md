@@ -29,7 +29,7 @@ from that point the Angular CLI will download all the dependencies and install t
 after we created the project we will get file in this format
 
 ```text
-├── angular-cli.json // Angular CLI configuration
+├── angular.json // Angular CLI configuration
 ├── e2e // end to end testing
 ├── karma.conf.js // testing configuration file
 ├── package.json // package configuration file
