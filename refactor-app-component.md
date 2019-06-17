@@ -91,3 +91,7 @@ export class ListManagerComponent implements OnInit {
 
 That's it! Now we can go on.
 
+
+{% hint style="success" %}
+[See the results on StackBlitz](https://stackblitz.com/github/ng-girls/todo-list-tutorial/tree/master/examples/13-refactor-app-component)
+{% endhint %}
