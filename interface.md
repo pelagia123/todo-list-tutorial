@@ -94,3 +94,7 @@ import { TodoItem } from './interfaces/todo-item';
 
 Now try to delete the title of one of the objects in the list. What happens?
 
+
+{% hint style="success" %}
+[See the results on StackBlitz](https://stackblitz.com/github/ng-girls/todo-list-tutorial/tree/master/examples/11-interface)
+{% endhint %}
