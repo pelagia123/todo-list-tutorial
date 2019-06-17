@@ -32,3 +32,7 @@ addItem(title: string) {
 * There may be additional logic when calling these methods, i.e. saving the changes in a database \(which we'll implement later\).
 * A better way to handle data is using _immutable objects_, but that's a bigger topic than we can cover in this tutorial at the moment.
 
+
+{% hint style="success" %}
+[See the results on StackBlitz](https://stackblitz.com/github/ng-girls/todo-list-tutorial/tree/master/examples/16-add-items-using-the-service)
+{% endhint %}
