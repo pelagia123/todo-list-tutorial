@@ -200,3 +200,7 @@ ngOnInit() {
 
 You don't need to change anything in the template since we're assigning the list to the same property we used before. Seems like nothing has changed, but you can check that the list comes from the service by changing it from there \(adding an item, changing a title, etc.\).
 
+
+{% hint style="success" %}
+[See the results on StackBlitz](https://stackblitz.com/github/ng-girls/todo-list-tutorial/tree/master/examples/15-creating-a-service)
+{% endhint %}
