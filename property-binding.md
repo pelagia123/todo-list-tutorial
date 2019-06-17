@@ -162,3 +162,7 @@ This will work in the browser.
 
 However, **this is highly discouraged in Angular. You should never access the DOM directly!** That's because you can assign different renderers to Angular and run the application on different platforms. They may be renderers for mobile, desktop, or even a robot. These platforms will not have a `document` object from which you can manipulate the result!
 
+
+{% hint style="success" %}
+[See the results on StackBlitz](https://stackblitz.com/github/ng-girls/todo-list-tutorial/tree/master/examples/06-property-binding)
+{% endhint %}
