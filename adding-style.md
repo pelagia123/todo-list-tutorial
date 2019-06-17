@@ -267,3 +267,7 @@ You can change the style as you wish - the size of elements, the colors - howeve
 
 Note: You can use SCSS files in the project, which is a nicer way to write style. It has great features that help the developer. SCSS files are compiled to CSS when the project is built.
 
+
+{% hint style="success" %}
+[See the results on StackBlitz](https://stackblitz.com/github/ng-girls/todo-list-tutorial/tree/master/examples/14-adding-style)
+{% endhint %}
