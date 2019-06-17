@@ -299,3 +299,7 @@ export class TodoListService {
 
 In this chapter we learned what local storage is and how to use it. We saw that `localStorage` is a great and a pretty straight-forward tool for developers to store data locally on the users' computers/devices. We then implemented a new service that uses `localStorage` to store data, which our `TodoListService` uses to save the todo-list items.
 
+
+{% hint style="success" %}
+[See the results on StackBlitz](https://stackblitz.com/github/ng-girls/todo-list-tutorial/tree/master/examples/17-local-storage)
+{% endhint %}
