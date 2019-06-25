@@ -166,3 +166,7 @@ The same way we use inline template, we can use also inline styles. But for now 
 
 We have explored the root component that was generated for us by the Angular CLI, and even refactored it. In the next chapter, we will create a new component. We will start building the tree of components, which defines the structure of the application.
 
+
+{% hint style="success" %}
+[See the results on StackBlitz](https://stackblitz.com/github/ng-girls/todo-list-tutorial/tree/master/examples/03-component )
+{% endhint %}
