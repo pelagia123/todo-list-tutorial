@@ -114,3 +114,7 @@ addItem(value: string) {
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
+
+{% hint style="success" %}
+[See the results on StackBlitz](https://stackblitz.com/github/ng-girls/todo-list-tutorial/tree/master/examples/12-add-items)
+{% endhint %}
