@@ -211,3 +211,7 @@ export class InputButtonUnitComponent implements OnInit {
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
+
+{% hint style="success" %}
+[See the results on StackBlitz](https://stackblitz.com/github/ng-girls/todo-list-tutorial/tree/master/examples/07-event-binding)
+{% endhint %}
