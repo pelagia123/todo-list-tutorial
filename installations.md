@@ -4,6 +4,16 @@ Although it is possible to develop web applications with a simple text editor al
 
 In addition, we recommend Git to manage versions of your code, and GitHub to publish and share it.
 
+{% hint style="info" %}
+#### Using an online editor
+If you don't have access to install tools on your computer or require the need to use an online editor, you'll use an online editor called [**StackBlitz**](https://stackblitz.com/). If you're using your computer for local development, you can skip this info panel and any future StackBlitz info panels.
+
+Most of the steps in this tutorial are the same for local development and online development, but if there's a difference, we'll draw attention to your online editor instructions. You'll see an info panel labeled ![](.gitbook/assets/stackblitz-hint.svg) **StackBlitz Instructions**. 
+
+Read about development tools on this page so you understand the tools we are using but don't follow the instructions for installation. Skip to the StackBlitz instructions at the bottom of the page to continue.
+{% endhint %}
+
+
 ## Browser
 
 Our first tool is the **browser**. We'll use it to see the result of our work and debug it. We recommend [Google Chrome](https://www.google.com/chrome/browser/desktop/) - it has great developer tools. [Firefox](https://www.mozilla.org/en-US/firefox/new/) is also awesome. If you don't already have one of those, just click the relevant link and follow the instructions to download and install the browser of your choice.
@@ -149,9 +159,31 @@ You can open another terminal to perform tasks in parallel.
 
 To stop the app from running, press `Ctrl+C` in the terminal, or close the terminal.
 
+
 Now we're ready to start developing!
 
 {% hint style="success" %}
 [See the results on StackBlitz](https://stackblitz.com/github/ng-girls/todo-list-tutorial/tree/master/examples/01-installations )
 {% endhint %}
 
+
+{% hint style="info" %}
+**StackBlitz Instructions** ![](.gitbook/assets/stackblitz-hint.svg)
+
+To get your development environment going, follow these three steps:
+1. Register for a free account on [GitHub](https://github.com/).
+1. StackBlitz uses your GitHub account as a social login. Register for a free [StackBlitz](https://stackblitz.com) account by using your GitHub account.
+1. On StackBlitz's site, click **START A NEW APP** then select **Angular** to start a new Angular workspace. 
+
+You should see a page similar this:
+
+![Initial App](https://github.com/ng-girls/todo-list-tutorial/raw/stackblitz/assets/initial-app-stackblitz.png)
+
+StackBlitz is an online editor that provides all the functionality of an online **IDE** by bundling **Visual Studio Code**, the **Angular CLI**, and a preview mode of your application together. **You do not have a terminal to run Angular CLI commands**. StackBlitz supports Angular CLI commands in the user interface. Whenever you see instructions to type a command in the terminal, you will see a StackBlitz instruction info panel to walk you through that command.
+
+We want to use the starter application for ngGirls. Open the [ngGirls tutorial starter application](https://stackblitz.com/github/ng-girls/todo-list-tutorial/tree/master/examples/01-installations) and click the **Fork** button on the toolbar. This is your own copy of the starter application to use for the tutorial. You can now close any other StackBlitz tabs in your browser.
+
+## Congratulations!
+
+You have a running Angular application and are all ready to start developing!
+{% endhint %}
