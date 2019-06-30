@@ -13,13 +13,7 @@ ng g c input-button-unit
 {% hint style="info" %}
 **StackBlitz Instructions** ![](.gitbook/assets/stackblitz-hint.svg)
 
-Right click on the `app` folder and select **Angular Generator**, then select **Component**. A small text input box displays at the top of the middle editor pane. Type `input-button-unit` to create the component.
-
-Now we'll manually move the HTML to make this component use inline templates like we did in the [#3: 📐 Component chapter](https://ng-girls.gitbook.io/todo-list-tutorial/component#inline-template).
-
-Copy all the code from the `input-button-unit.html`. In the `input-button-unit.component.ts` file, change `templateUrl` to `template`, and paste the HTML code between **backticks**.
-
-You may delete the `input-button-unit.html` file.
+We'll use the Angular Generator to create a component. Follow the instructions on the [Stackblitz instructions](./stackblitz.md) page and return here to continue the worksheet.
 {% endhint %}
 
 As we've seen before, `ng` is the command for using the Angular CLI. `g` is a shorthand for `generate`. `c` is a shorthand for `component`. `input-button-unit` is the name we give to the component.
