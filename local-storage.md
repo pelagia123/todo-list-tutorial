@@ -52,6 +52,13 @@ As in earlier chapters, we will generate the service using the Angular CLI. We w
 ng g s services/storage
 ```
 
+{% hint style="info" %}
+**StackBlitz Instructions** ![](.gitbook/assets/stackblitz-hint.svg)
+
+Right click on the `services` folder and use the Angular Generator to create a service named `storage`.
+{% endhint %}
+
+
 The new file, `storage.service.ts`, will be created with the following code:
 
 {% code-tabs %}
