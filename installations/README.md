@@ -121,12 +121,15 @@ ng new todo-list
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
-\(Depending on installation\) Angular CLI will ask a couple of questions to help create a new application. Answer the questions as shown below: 1. Would you like to add Angular routing? \(y/N\): **N** 1. Which stylesheet format would you like to use? \(Use arrow keys\): **CSS** \(Press Enter to select **CSS**\)
+\(Depending on installation\) Angular CLI will ask a couple of questions to help create a new application. Answer the questions as shown below: 
+
+1. Would you like to add Angular routing? \(y/N\): **N** 
+1. Which stylesheet format would you like to use? \(Use arrow keys\): **CSS** \(Press Enter to select **CSS**\)
 
 This can take a while, since many packages are being downloaded from the web and installed.
 
 {% hint style="info" %}
-**StackBlitz Instructions** ![](.gitbook/assets/stackblitz-hint.svg)
+**StackBlitz Instructions** ![](../.gitbook/assets/stackblitz-hint.svg)
 
 Skip to the [Stackblitz instructions](./stackblitz.md) page in this chapter to continue. 
 {% endhint %}
@@ -155,7 +158,7 @@ The flag `-o` is a short for `--open`, which will open your browser in the right
 
 You should see the page like this:
 
-![start screen. welcome message depends on project name](.gitbook/assets/181026-todo-list-start-screen.jpg)
+![start screen. welcome message depends on project name](../.gitbook/assets/181026-todo-list-start-screen.jpg)
 
 ## Congratulations!
 
