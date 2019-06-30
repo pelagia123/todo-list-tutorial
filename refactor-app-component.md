@@ -8,6 +8,12 @@ We're going to perform a small refactoring. The `app-root` shouldn't have such a
 ng g c list-manager
 ```
 
+{% hint style="info" %}
+**StackBlitz Instructions** ![](.gitbook/assets/stackblitz-hint.svg)
+
+Use the Angular Generator to create the component, then make the component [use an inline template](https://ng-girls.gitbook.io/todo-list-tutorial/component#inline-template). Continue with the remaining instructions on this page.
+{% endhint %}
+
 * Move all the code from `app-root` to `list-manager`.  
 * You can keep the title in app-root, and give it a nice value.
 * Be careful not to change the list manager component's class name!
