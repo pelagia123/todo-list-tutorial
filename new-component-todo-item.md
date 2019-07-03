@@ -8,6 +8,12 @@ Create a new component called `todo-item`:
 ng g c todo-item
 ```
 
+{% hint style="info" %}
+**StackBlitz Instructions** ![](.gitbook/assets/stackblitz-hint.svg)
+
+Use the Angular Generator to create the component, then make the component [use an inline template](https://ng-girls.gitbook.io/todo-list-tutorial/component#inline-template). Continue with the remaining instructions on this page.
+{% endhint %}
+
 You can see a new folder was created - `src/app/todo-item`, with the component files inside.
 
 Use the new component in the template of `app-root` component - inside the `<li>` element:
