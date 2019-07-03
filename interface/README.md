@@ -14,6 +14,12 @@ ng g i interfaces/todo-item
 
 `i` is short for... you guessed it - interface. Adding a path in the command to the Angular CLI generates the folders you specified if they do not already exist.
 
+{% hint style="info" %}
+**StackBlitz Instructions** ![](../.gitbook/assets/stackblitz-hint.svg)
+
+We'll use the Angular Generator to create the interface. Follow the instructions on the [Stackblitz instructions](./stackblitz.md) page and return here to continue the worksheet.
+{% endhint %}
+
 Open the newly created file `src/app/interfaces/todo-item.ts`:
 
 {% code-tabs %}
