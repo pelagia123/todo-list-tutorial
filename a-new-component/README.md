@@ -11,7 +11,7 @@ ng g c input-button-unit
 ```
 
 {% hint style="info" %}
-**StackBlitz Instructions** ![](.gitbook/assets/stackblitz-hint.svg)
+**StackBlitz Instructions** ![](./.gitbook/assets/stackblitz-hint.svg)
 
 We'll use the Angular Generator to create a component. Follow the instructions on the [Stackblitz instructions](./stackblitz.md) page and return here to continue the worksheet.
 {% endhint %}
