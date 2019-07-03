@@ -8,6 +8,12 @@ In Angular, a service is \(typically\) a JavaScript class that's responsible for
 ng g s services/todo-list
 ```
 
+{% hint style="info" %}
+**StackBlitz Instructions** ![](.gitbook/assets/stackblitz-hint.svg)
+
+Create the `services` folder inside the `app` folder. Then use the Angular Generator to create the service named `todo-list`. 
+{% endhint %}
+
 This command will generate the service in the file `src/app/services/todo-list.service.ts`. The service is a simple Class called `TodoListService`. It has the decorator `@Injectable` which allows it to use Dependency Injection.
 
 {% code-tabs %}
