@@ -13,7 +13,7 @@ ng g c input-button-unit
 {% hint style="info" %}
 **StackBlitz Instructions** ![](./.gitbook/assets/stackblitz-hint.svg)
 
-We'll use the Angular Generator to create a component. Follow the instructions on the [Stackblitz instructions](./stackblitz.md) page and return here to continue the worksheet.
+We'll use the Angular Generator to create a component. Follow the instructions on the [StackBlitz instructions](./stackblitz.md) page and return here to continue the worksheet.
 {% endhint %}
 
 As we've seen before, `ng` is the command for using the Angular CLI. `g` is a shorthand for `generate`. `c` is a shorthand for `component`. `input-button-unit` is the name we give to the component.
