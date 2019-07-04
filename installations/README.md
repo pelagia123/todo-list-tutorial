@@ -128,12 +128,6 @@ ng new todo-list
 
 This can take a while, since many packages are being downloaded from the web and installed.
 
-{% hint style="info" %}
-**StackBlitz Instructions** ![](../.gitbook/assets/stackblitz-hint.svg)
-
-Skip to the [Stackblitz instructions](./stackblitz.md) page in this chapter to continue. 
-{% endhint %}
-
 Now enter the new folder that the Angular CLI created for this project:
 
 {% code-tabs %}
@@ -159,6 +153,12 @@ The flag `-o` is a short for `--open`, which will open your browser in the right
 You should see the page like this:
 
 ![start screen. welcome message depends on project name](../.gitbook/assets/181026-todo-list-start-screen.jpg)
+
+{% hint style="info" %}
+**StackBlitz Instructions** ![](../.gitbook/assets/stackblitz-hint.svg)
+
+Follow the instructions on the [StackBlitz instructions](./stackblitz.md) page in this chapter to set up your online development environment. 
+{% endhint %}
 
 ## Congratulations!
 
