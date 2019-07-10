@@ -1,5 +1,11 @@
 # \#20: 🛰 Deploy to GitHub Pages
 
+{% hint style="info" %}
+**StackBlitz Instructions** ![](../.gitbook/assets/stackblitz-hint.svg)
+
+Follow the instructions on the [StackBlitz instructions](./stackblitz.md) page in this chapter to rename your StackBlitz project and share the link to your app. 
+{% endhint %}
+
 To deploy our changes to GitHub pages we will use the angular-cli-ghpages package [https://github.com/angular-schule/angular-cli-ghpages](https://github.com/angular-schule/angular-cli-ghpages)
 
 * You need to have a GitHub user
