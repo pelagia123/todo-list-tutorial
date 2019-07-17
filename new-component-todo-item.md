@@ -2,7 +2,7 @@
 
 We will create a new component to display each todo item presented in the list. It will be a simple component at first, but it will grow later on. What's important is that **it will get the todo item as an input from its parent component**. This way it can be a reusable component, and not rely directly on the application's data and state.
 
-Create a new component called `todo-item`:
+In the terminal, create a new component called `todo-item`:
 
 ```text
 ng g c todo-item
@@ -14,7 +14,7 @@ ng g c todo-item
 Use the Angular Generator to create the component, then make the component [use an inline template](https://ng-girls.gitbook.io/todo-list-tutorial/component#inline-template). Continue with the remaining instructions on this page.
 {% endhint %}
 
-You can see a new folder was created - `src/app/todo-item`, with the component files inside.
+Back in your IDE, you can see a new folder was created - `src/app/todo-item`, with the component files inside.
 
 Use the new component in the template of `app-root` component - inside the `<li>` element:
 
