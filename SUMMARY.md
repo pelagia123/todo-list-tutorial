@@ -14,7 +14,7 @@
 * [\#8: 📎 Element ref - \#](about/README.md)
   * [a. About](about/about.md)
   * [b. Explore](about/explore.md)
-  * [c. Ressources](about/ressources.md)
+  * [c. Resources](about/resources.md)
 * [\#9: 📋 The To Do list](the-to-do-list.md)
 * [\#10: ➕ New component: todo-item](new-component-todo-item.md)
 * [\#11: ⛓ Interface](interface/README.md)
