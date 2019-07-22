@@ -20,7 +20,7 @@ ng g i interfaces/todo-item
 We'll use the Angular Generator to create the interface. Follow the instructions on the [StackBlitz instructions](./stackblitz.md) page and return here to continue the worksheet.
 {% endhint %}
 
-Open the newly created file `src/app/interfaces/todo-item.ts`:
+In your IDE, open the newly created file `src/app/interfaces/todo-item.ts`:
 
 {% code-tabs %}
 {% code-tabs-item title="src/app/interfaces/todo-item.ts" %}
