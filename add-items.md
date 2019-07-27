@@ -13,7 +13,7 @@ So what we actually want to do is to **emit an event** from the `input-button-un
 Add the following line inside the `InputButtonUnitComponent` Class, which defines an output for the component:
 
 {% code-tabs %}
-{% code-tabs-item title="src/app/input-button-unit.component.ts" %}
+{% code-tabs-item title="src/app/input-button-unit/input-button-unit.component.ts" %}
 ```typescript
 @Output() submit: EventEmitter<string> = new EventEmitter();
 ```
@@ -35,7 +35,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 Now, whenever we call `this.submit.emit()`, an event will be emitted to the parent component. Let's call it in the `changeTitle` method:
 
 {% code-tabs %}
-{% code-tabs-item title="src/app/input-button-unit.component.ts" %}
+{% code-tabs-item title="src/app/input-button-unit/input-button-unit.component.ts" %}
 ```typescript
 changeTitle(newTitle: string) {
   this.submit.emit(newTitle);
@@ -51,7 +51,7 @@ We pass `newTitle` when we emit the event. Whatever we pass in `emit()` will be 
 The method name no longer matches the action it provides. Let's change it to something more appropriate: `submitValue`. You can use the IDE tools to refactor the method name - make sure that it is changed in the template as well.
 
 {% code-tabs %}
-{% code-tabs-item title="src/app/input-button-unit.component.ts" %}
+{% code-tabs-item title="src/app/input-button-unit/input-button-unit.component.ts" %}
 ```typescript
 submitValue(newTitle: string) {
   this.submit.emit(newTitle);
