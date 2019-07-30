@@ -296,6 +296,9 @@ export class TodoListService {
     this.todoList.splice(index, 1);
     this.saveList();
   }
+  getTodoList() {
+    return this.todoList;
+  }
 
 }
 ```
