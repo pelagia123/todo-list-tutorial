@@ -11,7 +11,7 @@ Open the file `index.html`. The content that is rendered in the browser's window
 
 So `<app-root>` is not an HTML element, it is an Angular Component. When the application is ready, the content of the component is inserted inside the `<app-root>` tag, and you will see it in the browser:
 
-![Initial App](https://github.com/ng-girls/todo-list-tutorial/raw/master/assets/initial-app.png)
+![Initial App](.gitbook/assets/initial-app.png)
 
 Let's learn a bit about Angular applications' main building block - the Angular module.
 

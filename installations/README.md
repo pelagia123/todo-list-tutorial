@@ -152,7 +152,7 @@ The flag `-o` is a short for `--open`, which will open your browser in the right
 
 You should see the page like this:
 
-![start screen. welcome message depends on project name](../.gitbook/assets/181026-todo-list-start-screen.jpg)
+![start screen. welcome message depends on project name](../.gitbook/assets/initial-app.png)
 
 {% hint style="info" %}
 **StackBlitz Instructions** ![](../.gitbook/assets/stackblitz-hint.svg)
