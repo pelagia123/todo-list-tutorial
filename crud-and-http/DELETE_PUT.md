@@ -23,13 +23,21 @@ Server is waiting under path `items/:id`, method PUT and body with adequate data
 
 Remember to retrieve data from database on success.
 
-You may see how your code should look like in StackBlitz.
+You may see how your code should look like in [StackBlitz](https://stackblitz.com/github/ng-girls/todo-list-tutorial/tree/master/examples/2_01-adding-crud).
 
 
 ## Cleaning the code
 
-Now you may clen the code:
+Now you may clean the code:
 * get rid of unused elements
 * define `http://localhost:3000/` as class property
 * maybe even define server url inside `environment.ts` and `environment.prod.ts`
 Do what you think will make code cleaner, more reusable, get familiar with [DRY](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself) and [KISS](https://en.wikipedia.org/wiki/KISS_principle) principles.
+
+## Homework
+
+As you might have noticed in final code there is different button which is using [Angular Material](https://material.angular.io/).
+Your task is to use Angular Material elements in the app. You may change every element.
+
+If you will have any problems please contact your mentor :)
+
