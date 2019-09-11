@@ -8,8 +8,6 @@ For performing HTTP calls in Angular we need to use `HttpModule` which offers a 
 
 We need to import this module in our `app.module.ts` so it may be used in the application.
 
-{% code-tabs %} 
-{% code-tabs-item title="src/app/app.module.ts" %}
 ```ts
 ...
 import { HttpClientModule } from '@angular/common/http';
@@ -31,20 +29,14 @@ import { HttpClientModule } from '@angular/common/http';
 export class AppModule {
 }
 ```
-{% endcode-tabs-item %} 
-{% endcode-tabs %}
 
 Now we can inject the built in`HttpClient` library in `todo-list.service.ts`. We'll ask for an instance of the `HttpClient` service in the constructor, and make sure to import the class.
 
-{% code-tabs %} 
-{% code-tabs-item title="src/app/services/todo-list.service.ts" %}
 ```ts
   constructor(private storageService: StorageService,
               private http: HttpClient) {
   }
 ```
-{% endcode-tabs-item %} 
-{% endcode-tabs %}
 
 ## Saving data in the database
 
@@ -52,13 +44,9 @@ When saving data we want to create it, so we will use the **POST** REST method.
 
 In your `addItem` method we want to add the code to POST an item by using `HttpClient`'s built in `post` method.
 
-{% code-tabs %} 
-{% code-tabs-item title="src/app/services/todo-list.service.ts" %}
 ```ts
 this.http.post();
 ```
-{% endcode-tabs-item %} 
-{% endcode-tabs %}
 
 The `post` method requires 2 parameters, the **url** and the **body**. Let's start with the **url**.
 
@@ -74,26 +62,18 @@ The full url to the server is the combination of the host and the path, which fo
 
 Now we need to add the data, or the **body**, to the request. We want to pass in the todo item.
 
-{% code-tabs %} 
-{% code-tabs-item title="src/app/services/todo-list.service.ts" %}
 ```ts
 this.http.post('http://localhost:3000/items', item);
 ```
-{% endcode-tabs-item %} 
-{% endcode-tabs %}
 
 ### Making the call
 The HttpClient library requires us to subscribe to the output of the `post()` call in order to trigger calling the server. We can do so by adding `.subscribe()` at the end of call.
 
-{% code-tabs %} 
-{% code-tabs-item title="src/app/services/todo-list.service.ts" %}
 ```ts
   addItem(item: TodoItem) {
     this.http.post('http://localhost:3000/items', item)
     .subscribe();
   }
 ```
-{% endcode-tabs-item %} 
-{% endcode-tabs %}
 
 We now have a working call to the local server! Try adding a todo item in your app. You can see log output in your local server console and feel free to check the content of your list items in MongoDB Atlas.
