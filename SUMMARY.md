@@ -37,6 +37,7 @@
 * [Second workshops - CRUD and http](crud-and-http/CRUD_HTTP.md)
   * [MongoDB](crud-and-http/MONGO_DB.md)
   * [Local server](crud-and-http/LOCAL_SERVER.md)
+  * [http in diagrams](crud-and-http/)
   * [POST](crud-and-http/POST.md)
   * [GET](crud-and-http/GET.md)
   * [DELETE and PUT](crud-and-http/DELETE_PUT.md)
