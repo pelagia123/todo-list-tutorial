@@ -80,7 +80,7 @@ Go to the browser and see the result - click on the Save button.
 
 ## Event Data
 
-We pass a static string to the method call: `Button Clicked!'` But we want to pass the value that the user typed in the input box!
+We pass a static string to the method call: `Button Clicked!` But we want to pass the value that the user typed in the input box!
 
 In the next chapter we will learn how to use properties of one element in another element in the same template. Then we'll be able to complete the implementation of the click event of the `Save` button. But now we'll bind a method to an event on the input element: when the user clicks Enter, the method `changeTitle` will be called.
 
