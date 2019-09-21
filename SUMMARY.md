@@ -34,6 +34,8 @@
 * [Appendix 2: Tutorial Extensions](appendix-2-tutorial-extensions.md)
 * [Troubleshooting](troubleshooting/README.md)
   * [Installation](troubleshooting/installation.md)
+
+## More Workshops
 * [Second workshops - CRUD and http](crud-and-http/CRUD_HTTP.md)
   * [MongoDB](crud-and-http/MONGO_DB.md)
   * [Local server](crud-and-http/LOCAL_SERVER.md)
