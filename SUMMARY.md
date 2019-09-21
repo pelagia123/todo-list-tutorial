@@ -1,5 +1,7 @@
 # Table of contents
 
+## 🏆 Full Day Workshop: Todo List
+
 * [👀 About](README.md)
 * [\#0: 💃 Introduction](introduction.md)
 * [\#1: ⌛ Installations](installations/README.md)
