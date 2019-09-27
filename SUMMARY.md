@@ -50,3 +50,4 @@
   * [\#1: Gallery 101. Display photos](observable-gallery/display-photos.md)
   * [\#2: More interaction! Upload photos](observable-gallery/upload-photos.md)
   * [\#3: Merging Observables](observable-gallery/display-uploaded-photos.md)
+  * [\#4: Filtering by category](observable-gallery/add-categories.md)
