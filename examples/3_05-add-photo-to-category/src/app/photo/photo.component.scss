@@ -1,0 +1,51 @@
+:host, img {
+    width: 100%;
+    height: 100%;
+}
+
+.photo {
+    cursor: pointer;
+    width: 100%;
+    height: 0;
+    padding-bottom: 100%;
+    position: relative;
+
+    &, img {
+        transition: all 0.2s ease-in-out;
+    }
+
+    img {
+        object-fit: cover;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    &:hover {
+        opacity: 0.9;
+        filter: drop-shadow(9px 9px 10px #333) contrast(140%);
+
+        img {
+            transform: scale(1.05);
+        }
+    }
+}
+
+textarea {
+    font-size: 1rem;
+    height: 5rem;
+    width: 100%;
+}
+
+.photo-description-container {
+    margin-top: 1rem;
+    position: relative;
+
+    .description-state {
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+}
