@@ -1,7 +1,7 @@
 # Add categories
-Wow! That was a nice ride! What now? Is our gallery finished? Of course not. Once you upload more and more photos you’d probably want to create some categories or tags. If we’d mix dogs memes with memories from our last pizzeria visit, the gallery would make no sense. Let’s go and some categories.
+Wow! That was a nice ride! What now? Is our gallery finished? Of course not. Once you upload more and more photos you’d probably want to create some categories or tags. If we’d mix dogs memes with memories from our last pizzeria visit, the gallery would make no sense. Let’s go and add categories.
 
-First? Maybe some Categories component?
+First? Maybe some Categories Component?
 
 ```html
 <div class="categories">
@@ -28,7 +28,7 @@ onAddNewCategory(name: string) {
 
 Sometimes I wish it’d be harder… Every time user press enter, send new category name to Categories Service and empty `newCategoryName`, so we won’t create the same category twice and we have nice UX. Shall we see our Categories Service?
 
-Not to bore you, but it’s almost the same stuff we’ve done in photos service. List of categories. Stream with new categories. Creating a big snowball out of them… Yep, normal Rx.js stuff. Not a lot to meditate on, maybe just elegance and usefullnes of Observables. `onCategoryClick` in Categories Component will work like `onPhotoClick` in Photo Component. Just instead setting active photo, we’ll set active category.
+Not to bore you, but it’s almost the same stuff we’ve done in photos service. List of categories. Stream with new categories. Creating a big snowball out of them… Yep, normal RxJS stuff. Not a lot to meditate on, maybe just elegance and usefullnes of Observables. `onCategoryClick` in Categories Component will work like `onPhotoClick` in Photo Component. Just instead setting active photo, we’ll set active category.
 
 But fear not! We have to do a bit more. Since we have categories now, we need to categorize our photos and upload new photos to some categories! Also we’re going to have to filter photos we show in our gallery, so user knows to what category each photo belongs. You may check out Categories Service and Categories Component on Stackblitz. Now let’s do something new and filter photos in our Gallery!
 
@@ -124,7 +124,7 @@ categories$ = combineLatest(
 ).pipe(this.mergeCategories)
 ```
 
-Now we have to recreate `mergeCategories` so it takes new Observable into consideration.
+Now we shall recreate `mergeCategories` so it takes new Observable into consideration.
 
 ```typescript
 mergeCategories = map(([categories, newCategories, activeCategoryID]) =>
@@ -135,8 +135,8 @@ mergeCategories = map(([categories, newCategories, activeCategoryID]) =>
     ))
 ```
 
-Now it flattens `categories` and `newCategories` into one array, but also adds new field `active` to each of them so we can use it in HTML template to add some class, like `active-category` and mark this category with CSS. We have photos, we have categories, we have created few Observables! Time to celebrate and add some more features!
+Now it flattens `categories` and `newCategories` into one array, but also adds new field `active` to each of them so we can use it in HTML template to add some class, like `active-category` and mark this category with CSS. We have photos, we have categories, we have created few Observables! Time to celebrate and think what more can we do with our gallery!
 
 {% hint style="success" %}
-[See the results on StackBlitz](https://stackblitz.com/github/jonki/todo-list-tutorial/tree/master/examples/3_04-categories/)
+[See the results on StackBlitz](https://stackblitz.com/github/jonki/observable-gallery/tree/master/examples/3_04-categories/)
 {% endhint %}
