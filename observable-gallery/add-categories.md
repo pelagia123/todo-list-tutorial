@@ -46,7 +46,7 @@ const initialCategories = [
 
 In Photos Service we have to add `categoryID` field to our photos and put proper IDs there. This way we can easily group photos by category.
 
-```
+```typescript
 …
 {
      url: "https://66.media.tumblr.com/dff05f90167b5e50eab4df4f61a309aa/tumblr_o1ro152Q1m1rbkxlgo1_500.jpg",
@@ -59,7 +59,7 @@ In Photos Service we have to add `categoryID` field to our photos and put proper
 
 Once we have categories and photos with category IDs, we can go to our Photos Service and add new Observable. Let’s call it `activeCategoryPhotos$`. We will base it on two existing Observables: `photos$` from Photos Service and `activeCategory$` from Category Service:
 
-```
+```typescript
 activeCategoryPhotos$ = combineLatest(
     this.categoriesService.activeCategory$,
     this.photos$,
@@ -73,7 +73,7 @@ activeCategoryPhotos$ = combineLatest(
 
 You know `combineLatest`, we have used it before. It listens to all given arguments and produces new value every time any of given Observables produces value. Like we did before, let’s break this part down and take `map` part away.
 
-```
+```typescript
 filterPhotosByCategory = map(([categoryID, photos]) => filter(
     propEq("categoryID", categoryID),
     photos
@@ -87,7 +87,7 @@ activeCategoryPhotos$ = combineLatest(
 
 `propEq` says: I take object you gave me and if property `"categoryID"` of this object equals `categoryID` value I return true. We have it. `activeCategoryPhotos$` is an Observable that filters `photos$` using `activeCategory$` from Categories Service. To use it, you have to go Gallery Component and bound it to `photosList$`, like that:
 
-```
+```typescript
 photosList$: Observable<Photo[]> = this.photosService.activeCategoryPhotos$;
 ```
 
@@ -97,7 +97,7 @@ Now, when you change active category, list of photos should change accordingly.
 
 To make sure users know what category is active, it’d be nice to mark it visually. Let’s go to Categories Service. If we’d like to just create Observable that shows all categories, existing and new, added by user, we could have written it like that:
 
-```
+```typescript
 categories$ = combineLatest(
     of(initialCategories), this.newCategories$
 ).pipe(
@@ -107,7 +107,7 @@ categories$ = combineLatest(
 
 or 
 
-```
+```typescript
 mergeCategories = map(([categories, newCategories]) =>
                       flatten([categories, newCategories]))
 
@@ -118,7 +118,7 @@ categories$ = combineLatest(
 
 but we want to be able to tell which category is currently active. To do it, we have to add third Observable to `combineLatest` and it’s… `activeCategory$` that keeps track of active category! Let’s add it:
 
-```
+```typescript
 categories$ = combineLatest(
     of(initialCategories), this.newCategories$, this.activeCategory$
 ).pipe(this.mergeCategories)
@@ -126,7 +126,7 @@ categories$ = combineLatest(
 
 Now we have to recreate `mergeCategories` so it takes new Observable into consideration.
 
-```
+```typescript
 mergeCategories = map(([categories, newCategories, activeCategoryID]) =>
     flatten([categories, newCategories]).map(
         category => merge(category, {
