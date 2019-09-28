@@ -142,5 +142,5 @@ ngOnDestroy() {
 ```
 
 {% hint style="success" %}
-[See the results on StackBlitz](https://stackblitz.com/github/jonki/observable-gallery/tree/master/examples/3_03_display-uploaded-photos)
+[See the results on StackBlitz](https://stackblitz.com/github/jonki/observable-gallery/tree/master/examples/3_03-display-uploaded-photos)
 {% endhint %}

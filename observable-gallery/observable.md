@@ -1,52 +1,9 @@
-# Photo gallery
-We’re starting with simple photo gallery. To create it we need one service and two Components. 
-
-Photos service will start with one field: `photos`. It’s an array with a bunch of example photos. First we’re going to use it to display our gallery. Later, we’ll gradually add Observables and interactvity, based on this array with photos.
-
-Our Photo interface looks like this:
-
-```typescript
-export interface Photo {
-    url: string;
-    description: string;
-    id: string;
-    categoryID?: string;
-}
-```
-
-so `photos` in Photos service has type `Photo[]`. Gallery Component refers to the list of photos
-
-```typescript
-photosList: Photo[] = this.photosService.photos;
-```
-
-and displays it using `*ngFor*`
-
-```html
-<div class="photos-list">
-    <div *ngFor="let photo of photosList" class="photo">
-        <app-photo [photo]="photo"></app-photo>
-    </div>
-</div>
-```
-
-As you see there’s one Component left to implement. `app-photo` which displays an individual photo. In the Component code we declare one `Input`
-
-```typescript
-@Input() photo: { description: string; };
-```
-
-and use this data in HTML template
-
-```typescript
-<img (click)="onPhotoClick(photo.id)" [src]="photo.url">
-```
-
+# Observable
 
 ## First Observable!
 Our photo gallery looks great, but all photos are so small. Users will want to see bigger pictures. Let’s help them do so! When users click on photo we’ll create a nice overlay over our gallery and show the whole photo.
 
-To do it we have to track which photo is currently active. How do we do it? Of course, with help of RxJS! It provides us with `BehaviorSubject` – object that holds value changing over time. Once we’ve had created BehaviorSubject that stores ID of active photo, we can display it easily.
+To do it we have to track which photo is currently active. How do we do it? Of course, with help of RxJS! It provides us with `BehaviorSubject` – object that holds value changing over time. Once we’ve had created BehaviorSubject that stores ID of active photo, we can display it easily. Let's add following code in `photos.service.ts`:
 
 ```typescript
 noPhotoID = ""
@@ -55,13 +12,13 @@ activePhotoID$ = new BehaviorSubject(this.noPhotoID)
 
 Notice the BehaviorSubject constructor takes one argument – initial value. When we start to subscribe to `activePhoto$` it will give us this value and, later, every next that comes to it. Our first value is empty string, since there’s no active photo when application starts.
 
-Let’s now go to our gallery and change value of activePhotoID$ every time user clicks on photo.
+Let's take a look on our `gallery.component.html` file
 
 ```typescript
 <img (click)="onPhotoClick(photo.id)" [src]="photo.url">
 ```
 
-We already know what’s going on here. Once user clicks on a photo, we’re going to call the `onPhotoClick` method with one argument: `photo.id`. How do we implement `onPhotoClick` to make sure it sends value to `activePhotoID$`? We can do so like this:
+We already know what’s going on here. Once user clicks on a photo, we’re going to call the `onPhotoClick` method with one argument: `photo.id`. We want to change value of `activePhotoID$` every time user clicks on photo. How do we implement `onPhotoClick` to make sure it sends value to `activePhotoID$`? We can do so in `gallery.component.ts` like this:
 
 ```typescript
 onPhotoClick(photoID: string) {
@@ -69,12 +26,41 @@ onPhotoClick(photoID: string) {
 }
 ```
 
-Just refer the `activePhotoID$` and call `next` on it! You’ve just connected user event with Observable. Great job! Now you can subscribe to it and display active photo.
+Just refer the `activePhotoID$` and call `next` on it! You’ve just connected user event with Observable. 
 
-# Creating new value from Observable
+
+At the end let's add some styles to our component
+```scss
+.active-photo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background: rgba(50, 50, 50, 0.8);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+        max-width: 80vw;
+        max-height: 80vh;
+    }
+}
+```
+
+
+Great job! Now you can subscribe to it and display active photo.
+
+
+## Creating new value from Observable
 To display active photo let’s create a new Component called (you guessed it) `active-photo`. It will access a photo that is currently active and display it.
 
-But, you probably thinking now, in our photos service, we only store the ID of the photo. Our Component needs entire Photo object! Let’s take our `activePhotoID$` and create new Observable out of it.
+**Tip** If you don't remember command to generate component take a look on a previous chapter.
+
+But, you probably thinking now, in our photos service, we only store the ID of the photo. Our Component needs entire Photo object! Let’s take our `activePhotoID$` and create new Observable out of it (of course in `photos.service.ts` file).
 
 ```typescript
 activePhoto$: Observable<Photo> = this.activePhotoID$.pipe(
@@ -82,19 +68,24 @@ activePhoto$: Observable<Photo> = this.activePhotoID$.pipe(
 )
 ```
 
+Remember to import `propEq` from ramda library:
+```typescript
+import propEq from 'ramda/es/propEq';
+```
+
 Only three lines of code and we’re done! This may look complicated, so let’s break down what happens in `activePhoto$` and walk through the steps together.
 
-First: we’re accessing current active photo ID. 
+**First**: we’re accessing current active photo ID. 
 
-Second: we’re using `pipe` method to transform it into something new. That’s what `pipe` does. Think of it like a coffee grinder- you put coffee in and get coffee out, but shaped just a little bit differently. It takes value from Observable and pipes it through RxJS operators that create new Observables. Our first `pipe` takes photo ID and maps it to Photo object. 
+**Second**: we’re using `pipe` method to transform it into something new. That’s what `pipe` does. Think of it like a coffee grinder - you put coffee in and get coffee out, but shaped just a little bit differently. It takes value from Observable and pipes it through RxJS operators that create new Observables. Our first `pipe` takes photo ID and maps it to Photo object. 
 
-Third: we take array of photos and return one Photo whose `id` equals `photoID`. Function `propEq` says exactly that: check if property named `id` equals variable `photoID`.
+**Third**: we take array of photos and return one Photo whose `id` equals `photoID`. Function `propEq` says exactly that: check if property named `id` equals variable `photoID`.
 
 Let’s break this process down even further. Let’s extract a method that takes photo ID and returns Photo. It looks like this:
 
 ```typescript
-findPhotoByID = (photos: Photo[], photoID: string) =>
-    photos.find(propEq("id", photoID))
+findPhotoByID = (photoID: string) =>
+    this.photos.find(propEq("id", photoID));
 ```
 
 We’re just finding one photo in array. Now, move it back to our `activePhoto$` Observable.
@@ -102,7 +93,7 @@ We’re just finding one photo in array. Now, move it back to our `activePhoto$`
 ```typescript
 activePhoto$: Observable<Photo> = this.activePhotoID$.pipe(
     map(this.findPhotoByID)
-)
+);
 ```
 
 Take the active photo ID, pipe it through `map` operator and return new Observable that finds photo based on ID.
@@ -110,12 +101,15 @@ Take the active photo ID, pipe it through `map` operator and return new Observab
 Go on and use `activePhoto$` Observable to display photo that user wanted to see!
 
 ## Display active photo!
+
 It gets more and more interesting! You created `BehaviorSubject` that keeps value changing over time. You’ve used it to create new Observable! Now you get to display data from it. It surely requires a lot of work, or does it…? Let’s look at the code.
 
+In `active-photo.component.ts` we have to inject PhotoService in component's constructor and add:
 ```typescript
 activePhoto$: Observable<Photo> = this.photosService.activePhoto$;
 ```
 
+Now we can use it in `active-photo.component.html` like here:
 ```html
 <div *ngIf="(activePhoto$ | async)" class="active-photo">
     <img [src]="(activePhoto$ | async)?.url">
@@ -124,11 +118,14 @@ activePhoto$: Observable<Photo> = this.photosService.activePhoto$;
 
 And we have it with a couple lines of code! You assign `activePhoto$` from Photos service to Component field, so we can access `activePhoto$` value in HTML. Because we access asynchronous value that changes over time, we need to use the `async` pipe. The `async` pipe tells Angular it should subscribe to the asynchronous value and use new value every time it changes. Last part `?.url` means: check if `activePhoto$` holds a value, if it does access `url` field from it and display in HTML. Whew! We did it!
 
+
+## Hiding a photo 
+
 Last thing to do is hiding the photo! It’s nice that user can see bigger photos, but refreshing application every time one wants to change photo preview would be a little… cumbersome ;)
 
 To hide active photo we need to put empty ID on `activePhotoID$` `BehaviorSubject`. This way Photos service will know to send our Components `undefined` value through `activePhoto$` Observable and no photo will be displayed.
 
-Ok, first let’s add `hidePhoto` handler to HTML element, like this:
+Ok, first let’s add `hidePhoto` handler to `active-photo.component.html` file, like this:
 
 ```html
 <div
@@ -140,7 +137,7 @@ Ok, first let’s add `hidePhoto` handler to HTML element, like this:
 </div>
 ```
 
-The active photo is now ready to receive user clicks. Now we go to Component and implement our handler.
+The active photo is now ready to receive user clicks. Now we go to `active-photo.component.ts` and implement our handler.
 
 ```typescript
 hidePhoto() {
