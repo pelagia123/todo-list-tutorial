@@ -55,7 +55,7 @@ Reminder: We use interpolation to present the value of the `title` property: `{{
 
 What if we want to show the title value inside the HTML input control itself?
 
-Every `input` element has a property called `value`, which holds the string that is displayed inside the `input` box. In HTML, we can pass a string directly to the element's `value` attribute:
+Every `input` element has an attribute called `value`, which holds the string that is displayed inside the `input` box. In HTML, we can pass a string directly to the element's `value` attribute:
 
 {% code-tabs %}
 {% code-tabs-item title="src/app/input-button-unit/input-button-unit.component.ts" %}
