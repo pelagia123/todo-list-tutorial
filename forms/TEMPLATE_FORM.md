@@ -29,7 +29,7 @@ To use the `FormsModule` add it to the array of imports in the `AppModule` in `a
 
 ## 2-way data binding
 
-As with almost everything in software development, there are multiple ways to implement a solution for a feature. We want a way to capture user input in the different form fields and bind that input to properties in the component so that we can easily access the information. To help us do so, we will use `[(ngModel)]`. Take a moment to read more about it in [the Angular forms documentation](https://angular.io/api/forms/NgModel#description).
+As with almost everything in software development, there are multiple ways to implement a solution for a feature. We want a way to capture user input in the different form fields and bind that input to properties in the component so that we can easily access the information. To help us do so, we will use `[(ngModel)]` (`[()]` syntax is called banana in the box). Take a moment to read more about it in [the Angular forms documentation](https://angular.io/api/forms/NgModel#description).
 
 One thing to note is when using `ngModel`, each form control needs to have a `name` [attribute](https://angular.io/api/core/Attribute).
 
@@ -102,4 +102,4 @@ The refactored function looks similar to:
 
 Try to use `NgForm` methods to clear inputs after submitting a value.
 
-See the final result on Stackblitz.
+See the final result on [StackBlitz](https://stackblitz.com/github/ng-girls/todo-list-tutorial/tree/master/examples/4_01-template-form).
