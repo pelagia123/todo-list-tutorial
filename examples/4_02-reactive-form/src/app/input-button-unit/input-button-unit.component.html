@@ -1,0 +1,16 @@
+<h2>Template-driven form</h2>
+
+<form #itemForm="ngForm" (ngSubmit)="submitValue(itemForm)">
+  <div class="form-group">
+    <input class="todo-input form-control"
+           name="title"
+           matInput
+           required
+           [(ngModel)]="title">
+  </div>
+  <button mat-raised-button
+          color="primary"
+          type="submit">
+    Save
+  </button>
+</form>
