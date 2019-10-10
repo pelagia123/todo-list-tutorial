@@ -52,3 +52,6 @@
   * [\#3: Merging Observables](observable-gallery/display-uploaded-photos.md)
   * [\#4: Filtering by category](observable-gallery/add-categories.md)
   * [\#5: Adding photos to category](observable-gallery/add-photo-to-category.md)
+
+*[Forms](forms/FORMS_INTRO.md)
+  * [\#1: Template-driven forms](forms/TEMPLATE_FORM.md)
