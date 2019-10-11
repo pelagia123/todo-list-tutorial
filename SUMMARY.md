@@ -53,5 +53,7 @@
   * [\#4: Filtering by category](observable-gallery/add-categories.md)
   * [\#5: Adding photos to category](observable-gallery/add-photo-to-category.md)
 
-*[Forms](forms/FORMS_INTRO.md)
+* [Forms](forms/FORMS_INTRO.md)
   * [\#1: Template-driven forms](forms/TEMPLATE_FORM.md)
+  * [\#2: Reactive forms](forms/REACTIVE_FORM.md)
+  * [\#3: Form builder](forms/FORM_BUILDER.md)
