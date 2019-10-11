@@ -2,7 +2,7 @@
 
 Great job implementing a template-driven form! Let's move to second approach, reactive forms.
 
-We could try to implement the same to do item form using reactive forms, but to fully take advantage of this power form library, you will create a separateand more complex form for gathering basic user info.
+We could try to implement the same to do item form using reactive forms, but to fully take advantage of this powerful form library, you will create a separate and more complex form for gathering basic user info.
 
 ## Create the component for user info
 
