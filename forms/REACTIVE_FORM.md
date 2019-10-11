@@ -1,29 +1,37 @@
 # Reactive form
 
-Great! You've just finished implementing template-driven form! Let's move to second approach which is reactive forms.
+Great job implementing a template-driven form! Let's move to second approach, reactive forms.
 
-We may try to implement the same todo item form using another solution but to fully experience power of reactive forms you will create another, independent and more complex form for gathering basic user info.
+We could try to implement the same to do item form using reactive forms, but to fully take advantage of this power form library, you will create a separateand more complex form for gathering basic user info.
 
-Let's start by creating new component. In tutorial we will name it `user-info` but feel free to name it whatever you want.
+## Create the component for user info
 
-Now we are ready to start implementing reactive form.
-First step is to import `ReactiveFormsModule` in main app module.
+Let's start by creating a new component using the Angular CLI. We will tutorial we will name it `user-info` but feel free to name it whatever you want.
 
-To build form control in reactive form you have to use `FormControl` class. Usage is really simple - just create new instance of this class.
+Once you finish creating the component, we are ready to start implementing reactive form.
+
+## Adding your first reactive form
+
+The first step is to import `ReactiveFormsModule` library in `AppModule` and add it to the imports array.
+
+To build a form control in reactive form you have to use `FormControl` class and we can do so by creating a new instance of this class in the `UserInfo` component.
 
 ```typescript
 firstName = new FormControl('initial state');
 ```
-Initial state may be empty.
 
- You also need to register this control in your template as you needed to define `[(ngModel)]` in template-driven form.
+Don't worry about setting the initial state of `firstName`.
+
+ You also need to register this control in your template in the same way you needed to define `[(ngModel)]` in template-driven form.
  
 ```html
 <input type="text" matInput [formControl]="firstName" required>
 ```
 
+## Adding more form controls
+
 But what if you want more than one form control?
-You may add them and group inside `FormGroup`!
+Angular lets us add multiple form controls and group collections of controls together in a `FormGroup`!
 
 ```ts
 userFormGroup = new FormGroup({
@@ -37,52 +45,61 @@ userFormGroup = new FormGroup({
 });
 ```
 
-Now inside form in HTML you may register both FormGroup and all the FormControls. [help](https://angular.io/guide/reactive-forms#step-1-creating-a-formgroup-instance).
+Now inside form in HTML you'll register both `FormGroup` and all the `FormControl`s. Take a moment to do so by using the documentation to [create a FormGroup from angular.io](https://angular.io/guide/reactive-forms#step-1-creating-a-formgroup-instance).
 
-Once it's ready we may start playing with it.
-Make sure that each input has proper `type`.
+Make sure that each HTML input element has the proper `type` attribute.
 
-You may mark some of inputs as required but the simple html directive is not enough. To properly handle form validation each `FormControl` should define validation rules. Read through the [guide](https://angular.io/guide/form-validation) and appropriate rules.
+Once complete we can start playing with it.
 
-To indicate the form validation state add submit button that would be disabled if form is invalid (`[disabled]="userFormGroup.invalid"`).
+## Adding validation
 
-Try to play a bit with validators, for instance you can add pattern validator accepting only values from limited word range. Pattern validation may take [regular expression](https://en.wikipedia.org/wiki/Regular_expression) as an argument and [here](https://regex101.com/) you may find some useful tool while writing your RegExp.
+You can add the `required` attribute to HTML elements to force inputs as required but the HTML attribute may not enough. To properly handle form validation, each `FormControl` should define its own validation rules. Take a moment to read through the [form validation section on angular.io](https://angular.io/guide/form-validation) and add the appropriate validation rules in your code.
 
-## Something familiar
+To provide visual indication of form validation state, bind the disabled attribute on the submit button to the `invalid` property on the form. It will look like `[disabled]="userFormGroup.invalid"`.
 
-**Submitting** the form works exactly like in template-driven forms if it comes to HTML part.
+Try to play a bit with validators! For example, you can add pattern validator that only accepts values from limited word range. Pattern validation uses [regular expressions](https://en.wikipedia.org/wiki/Regular_expression) as an argument. You can find example patterns and a handy [online pattern testing tool online](https://regex101.com/).
 
-For saving data from form this time we won't be using any service. Just to simply play with reactive forms you may store it inside class property named `gatheredUserInfo`. We encourage you to create also new type that will reflect structure of data in the form (new interface may be defined in the same `.ts` file - above or below component class declaration).
+## Submit the form
 
-Check what are the methods and properties of `FormGroup` and find one which will allow you to get raw data from form and save it inside a variable. Use it inside `onSubmit()` method. Try to ask for help only if necessary.
+Submitting the form works like in template-driven forms when it comes to HTML part, but we won't use a service to save the form data. 
 
-**Displaying the data** gathered from form is also really simple - since it is stored as property you may easily access it in your HTML.
-You may create for example something like that:
+Instead we'll store the different form input properties as locally so that we can experiment with reactive forms. Save your form data inside class property named `gatheredUserInfo`. We encourage you to create new type that reflects the structure of data of the form (feel free to define the new interface in the same `.ts` file - above or below component class declaration).
+
+Find the methods and properties of `FormGroup` that allows you to get the raw data of the form from the angular.io documentation. Save the data inside a variable and reference it inside `onSubmit()` method. Try challenging yourself to read the documentation and applying the concepts yourself before asking for help. 💪
+
+## Display the form data
+
+Because we store form data as properties within the component file, we can access the data to display in the HTML like we've done before with data binding using interpolation.
+
+For example, you can create a HTML element to display data like this:
 
 ```html
   <p>Name: {{ gatheredUserInfo.firstName }}</p>
 ```
 
-Everything is displayed as expected?
-Great, now we may move on.
+Display the remaining form data. Can you see all the form data in your template?
+Great job! Let's try experimenting with `FormGroup` some more.
 
-## Something new
+## Editing form inputs
 
-`FormGroup` comes with very powerful methods like for example `setValue` and `patchValue` but you've probably already seen those when looking for `getRawValue`. To see one of those in action, please: 
+`FormGroup` comes with very powerful methods such as `setValue` and `patchValue`. You may have already come across those methods when looking for `getRawValue`. Let's try it out!
 
-1. Add in the class few properties that you would like to use as default values in your form.
-2. Add button which will call `fillDefault` function.
+To see one of those in action, please: 
+
+1. Add a few properties int the class that you would like to use as default values in your form.
+2. Add a button which will call `fillDefault` function.
 3. Prepare logic inside that function which will patch default values into your form.
-4. Try to always use documentation - it is crucial for you to learn how to use it.
+4. Try referring to the angular.io documentation- it is crucial for you to learn how to find documentation and apply it to your code as part of your coding journey.
 
-Everything is working?
-Now you may play with Angular Material.
-Add [MatFormFields](https://material.angular.io/components/form-field/overview) and [Material Buttons](https://material.angular.io/components/button/overview) into existing template.
+Is everything is working? Nice job! Now let's make the form input elements more visually appealing by adding in Angular Material.
 
-All done?
-Let's move to another "game" with form.
-To `onSubmit` function add disabling form.
-Now for each element which is displaing gathered info add button which will trigger editing function. We've done it like this:
+Add [MatFormFields](https://material.angular.io/components/form-field/overview) and [Material Buttons](https://material.angular.io/components/button/overview) into the existing template.
+
+Wow! Doesn't it look amazing now?
+
+Let's move to another "game" with form- enable input elements.
+
+For each element where we display gathered info, add a button which will trigger editing functionality. Your code may look something like:
 
 ```html
   <p>Name: {{ gatheredUserInfo.firstName }}
@@ -94,19 +111,16 @@ Now for each element which is displaing gathered info add button which will trig
   </p>
 ```
 
-You may see that we've put button with `editField(fieldName)` function on click. 
+Notice we added a click handler on the button where we call a function- `editField(fieldName)`.
+
 We provide field name as a string, but if you want to do it with element reference feel free to try it :)
 
-Our edit function works in a simple way - it is enabling control which is responsible for gathering this one specific information - so in the example above when we click on the edit button next to displayed name we will enable `firstName` field inside `userFormGroup`.
-Do you know what will be inside `editField` function?
-I bet you've told `this.userInfoGroup.controls[fieldName].enable();`.
+Our edit function enables the control that gathers the specific information we want. In the example above when we click on the edit button next to displayed name we will enable `firstName` field inside `userFormGroup`.
 
-Since you've had more freedom this time with coding your solutions on [StackBlitz](https://stackblitz.com/github/ng-girls/todo-list-tutorial/tree/master/examples/4_02-reactive-form) there is only an example of how it may be done.
+Do you know what will be inside `editField` function? 🤔
 
-Please discuss with your mentor anything that is coming to your mind right now.
+You got it! We can use the `enable()` method on the control like this- `this.userInfoGroup.controls[fieldName].enable();`.
 
+Since you've had more freedom this time with coding your solutions on [StackBlitz](https://stackblitz.com/github/ng-girls/todo-list-tutorial/tree/master/examples/4_02-reactive-form) there is one example of a solution. Your code may look quite a bit different and we celebrate your creativity!
 
-
-
-
-
+Please take a moment to discuss any that comes to mind with your mentor.
