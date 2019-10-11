@@ -1,0 +1,155 @@
+<h2>Reactive form</h2>
+
+<form
+  [formGroup]="userInfoGroup"
+  (ngSubmit)="onSubmit()">
+  <mat-form-field>
+    <input
+      type="text"
+      matInput
+      formControlName="firstName"
+      placeholder="first name"
+      required>
+  </mat-form-field>
+  <mat-form-field>
+    <input
+      type="text"
+      matInput
+      formControlName="lastName"
+      placeholder="last name">
+  </mat-form-field>
+  <mat-form-field>
+    <input
+      type="email"
+      matInput
+      formControlName="email"
+      placeholder="email">
+  </mat-form-field>
+  <mat-form-field>
+    <input
+      type="text"
+      matInput
+      formControlName="phone"
+      placeholder="phone">
+  </mat-form-field>
+  <mat-form-field>
+    <input
+      type="text"
+      matInput
+      formControlName="hobby"
+      placeholder="hobby">
+  </mat-form-field>
+  <mat-form-field>
+    <input
+      type="text"
+      matInput
+      formControlName="bestFriendName"
+      placeholder="best friend">
+  </mat-form-field>
+  <mat-form-field>
+    <input
+      matInput
+      [matDatepicker]="picker"
+      formControlName="dateOfBirth"
+      placeholder="Chooseyour date of birth">
+    <mat-datepicker-toggle
+      matSuffix
+      [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+  <div formArrayName="skills">
+    <button
+      (click)="addSkills()"
+      type="button"
+      mat-raised-button>Add Alias
+    </button>
+
+    <div *ngFor="let skill of skills.controls; let i=index">
+      <mat-form-field>
+        <input
+          type="text"
+          matInput
+          placeholder="skill {{ i + 1 }}"
+          [formControlName]="i">
+      </mat-form-field>
+
+    </div>
+  </div>
+
+  <button
+    type="submit"
+    mat-raised-button
+    color="primary"
+    [disabled]="userInfoGroup.invalid">Submit
+  </button>
+</form>
+
+<div *ngIf="gatheredUserInfo">
+  <h2>Gathered Info</h2>
+  <p>Name: {{ gatheredUserInfo.firstName }}
+    <button
+      mat-icon-button
+      (click)="editField('firstName')">
+      <mat-icon>edit</mat-icon>
+    </button>
+  </p>
+  <p>Surname: {{ gatheredUserInfo.lastName }}
+    <button
+      mat-icon-button
+      (click)="editField('lastName')">
+      <mat-icon>edit</mat-icon>
+    </button>
+
+  </p>
+  <p>Mail: {{ gatheredUserInfo.email }}
+    <button
+      mat-icon-button
+      (click)="editField('email')">
+      <mat-icon>edit</mat-icon>
+    </button>
+  </p>
+  <p>Phone: {{ gatheredUserInfo.phone }}
+    <button
+      mat-icon-button
+      (click)="editField('phone')">
+      <mat-icon>edit</mat-icon>
+    </button>
+  </p>
+  <p>Hobby: {{ gatheredUserInfo.hobby }}
+    <button
+      mat-icon-button
+      (click)="editField('hobby')">
+      <mat-icon>edit</mat-icon>
+    </button>
+  </p>
+  <p>Bestie: {{ gatheredUserInfo.bestFriendName }}
+    <button
+      mat-icon-button
+      (click)="editField('bestFriendName')">
+      <mat-icon>edit</mat-icon>
+    </button>
+  </p>
+  <p>DoB: {{ gatheredUserInfo.dateOfBirth | date }}
+    <button
+      mat-icon-button
+      (click)="editField('dateOfBirth')">
+      <mat-icon>edit</mat-icon>
+    </button>
+  </p>
+  <p>Skills:
+    <span *ngFor="let skill of gatheredUserInfo.skills">{{ skill }}</span>
+    <button
+      mat-icon-button
+      (click)="editField('skills')">
+      <mat-icon>edit</mat-icon>
+    </button>
+  </p>
+
+</div>
+
+<button
+  type="button"
+  mat-raised-button
+  color="accent"
+  (click)="fillDefault()">Fill default
+</button>
