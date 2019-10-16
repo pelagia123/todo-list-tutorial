@@ -57,3 +57,4 @@
   * [\#1: Template-driven forms](forms/TEMPLATE_FORM.md)
   * [\#2: Reactive forms](forms/REACTIVE_FORM.md)
   * [\#3: Form builder](forms/FORM_BUILDER.md)
+* [Blog Editor](workshops/blog-editor/index.md)
