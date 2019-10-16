@@ -12,13 +12,13 @@ activePhotoID$ = new BehaviorSubject(this.noPhotoID)
 
 Notice the BehaviorSubject constructor takes one argument – initial value. When we start to subscribe to `activePhoto$` it will give us this value and, later, every next that comes to it. Our first value is empty string, since there’s no active photo when application starts.
 
-Let's take a look on our `gallery.component.html` file
+Let's take a look on our `photo.component.html` file
 
 ```typescript
 <img (click)="onPhotoClick(photo.id)" [src]="photo.url">
 ```
 
-We already know what’s going on here. Once user clicks on a photo, we’re going to call the `onPhotoClick` method with one argument: `photo.id`. We want to change value of `activePhotoID$` every time user clicks on photo. How do we implement `onPhotoClick` to make sure it sends value to `activePhotoID$`? We can do so in `gallery.component.ts` like this:
+We already know what’s going on here. Once user clicks on a photo, we’re going to call the `onPhotoClick` method with one argument: `photo.id`. We want to change value of `activePhotoID$` every time user clicks on photo. How do we implement `onPhotoClick` to make sure it sends value to `activePhotoID$`? We can do so in `photo.component.ts` like this:
 
 ```typescript
 onPhotoClick(photoID: string) {
@@ -26,33 +26,7 @@ onPhotoClick(photoID: string) {
 }
 ```
 
-Just refer the `activePhotoID$` and call `next` on it! You’ve just connected user event with Observable. 
-
-
-At the end let's add some styles to our component
-```scss
-.active-photo {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-    background: rgba(50, 50, 50, 0.8);
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    img {
-        max-width: 80vw;
-        max-height: 80vh;
-    }
-}
-```
-
-
-Great job! Now you can subscribe to it and display active photo.
+**Tip** Remember to inject service in constructor.
 
 
 ## Creating new value from Observable
@@ -64,8 +38,8 @@ But, you probably thinking now, in our photos service, we only store the ID of t
 
 ```typescript
 activePhoto$: Observable<Photo> = this.activePhotoID$.pipe(
-    map(photoID => this.photos.find(propEq("id", photoID))
-)
+    map(photoID => this.photos.find(propEq("id", photoID)))
+);
 ```
 
 Remember to import `propEq` from ramda library:
@@ -96,6 +70,8 @@ activePhoto$: Observable<Photo> = this.activePhotoID$.pipe(
 );
 ```
 
+**Tip** Remember to define function findPhotoByID before its usage.
+
 Take the active photo ID, pipe it through `map` operator and return new Observable that finds photo based on ID.
 
 Go on and use `activePhoto$` Observable to display photo that user wanted to see!
@@ -115,6 +91,36 @@ Now we can use it in `active-photo.component.html` like here:
     <img [src]="(activePhoto$ | async)?.url">
 </div>
 ```
+
+
+At the end let's add some styles to our `active-photo` component 
+```scss
+.active-photo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background: rgba(50, 50, 50, 0.8);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+        max-width: 80vw;
+        max-height: 80vh;
+    }
+}
+```
+
+Looks great but... our component is not visible in the app! To fix it we have to add 
+```ts
+<app-active-photo></app-active-photo>
+```
+in `app.component.html`, just below the `<app-gallery>` tag. 
+
 
 And we have it with a couple lines of code! You assign `activePhoto$` from Photos service to Component field, so we can access `activePhoto$` value in HTML. Because we access asynchronous value that changes over time, we need to use the `async` pipe. The `async` pipe tells Angular it should subscribe to the asynchronous value and use new value every time it changes. Last part `?.url` means: check if `activePhoto$` holds a value, if it does access `url` field from it and display in HTML. Whew! We did it!
 
