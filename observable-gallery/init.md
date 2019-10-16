@@ -28,7 +28,7 @@ ng g s <service-name>
 Now, we have to define how our photo objects will look like - for each photo we need info about its id, url, descrption and optionally categoryID. So let's create an interface Photo by command:
 
 ```bash
-ng c i photo
+ng g i photo
 ```
 
 Our Photo interface should look like this:
@@ -48,7 +48,7 @@ Photos service will be responsible for all actions connected with management of 
 
  First we’re going to use it to display our gallery. Later, we’ll gradually add Observables and interactvity, based on this array with photos.
 
-We need some initial photos in our gallery so just copy-paste array from snippet below in your `photo.service.ts` 
+We need some initial photos in our gallery so just copy-paste array from snippet below in your `photo.service.ts` (above the class body).
 
 ```typescript
 const initialPhotos: Photo[] = [
@@ -89,7 +89,7 @@ const initialPhotos: Photo[] = [
     }
 ];
 ```
-and put it as initial value for `photos` property
+and put it as initial value for `photos` property (inside the PhotoService class)
 
 ```typescript
 photos: Photo[] = initialPhotos;
@@ -100,7 +100,7 @@ Thanks to that we have simple list of photos we can present in gallery component
 
 ## Gallery component
 
-Gallery Component refers to the list of photos, so we have to add corresponding `photosList` property in `service.component.ts` file:
+Gallery Component refers to the list of photos, so we have to add corresponding `photosList` property in `gallery.component.ts` file:
 
 ```typescript
 photosList: Photo[] = this.photosService.photos;
@@ -125,7 +125,7 @@ Now you can display our list using `*ngFor` in `gallery.component.html` file:
 
 ## Photo component
 
-As you see there’s one Component left to implement: `app-photo` which displays an individual photo. So... please, create it! I'm sure you remember the correct command.
+As you see there’s one Component left to implement: `app-photo` which displays an individual photo.
 
 In the `photo.component.ts` declare one `Input`
 
