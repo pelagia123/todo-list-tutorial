@@ -60,7 +60,7 @@ export class AppModule { }
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
-The `providers` array tells Angular how to provide a service we're looking for \(usually in a component or another service\). This time the recipe is simple: When we ask for the `TodoListComponent` class we expect to get an instance of this class. Angular will create only one instance that we can access from anywhere in our application \(a Singleton\), so we can use it to share data between different parts of the application.
+The `providers` array tells Angular how to provide a service we're looking for \(usually in a component or another service\). This time the recipe is simple: When we ask for the `TodoListService` class we expect to get an instance of this class. Angular will create only one instance that we can access from anywhere in our application \(a Singleton\), so we can use it to share data between different parts of the application.
 
 Make sure that the service is imported:
 
