@@ -39,12 +39,12 @@
 
 ## More Workshops
 * [Second workshops - CRUD and http](crud-and-http/CRUD_HTTP.md)
-  * [MongoDB](crud-and-http/MONGO_DB.md)
-  * [Local server](crud-and-http/LOCAL_SERVER.md)
-  * [http in diagrams](crud-and-http/CRUDalize_diagrams.md)
-  * [POST](crud-and-http/POST.md)
-  * [GET](crud-and-http/GET.md)
-  * [DELETE and PUT](crud-and-http/DELETE_PUT.md)
+  * [\#1 MongoDB](crud-and-http/MONGO_DB.md)
+  * [\#2 Local server](crud-and-http/LOCAL_SERVER.md)
+  * [\#3 http in diagrams](crud-and-http/CRUDalize_diagrams.md)
+  * [\#4 POST](crud-and-http/POST.md)
+  * [\#5 GET](crud-and-http/GET.md)
+  * [\#6 DELETE and PUT](crud-and-http/DELETE_PUT.md)
 
 * [Gallery with Rx.js](observable-gallery/hello.md)
   * [\#0: Init photo gallery](observable-gallery/init.md)
@@ -58,4 +58,11 @@
   * [\#1: Template-driven forms](forms/TEMPLATE_FORM.md)
   * [\#2: Reactive forms](forms/REACTIVE_FORM.md)
   * [\#3: Form builder](forms/FORM_BUILDER.md)
+
+* [NgRx](ngrx/NGRX_INTRO.md)
+  * [\#1: Actions and reducers](ngrx/ACTIONS_REDUCERS.md) 
+  * [\#2: Store Devtools](ngrx/DEVTOOLS.md) 
+  * [\#3: Implementing actions in app](ngrx/ACTIONS_IN_APP.md) 
+  * [\#4: Selectors](ngrx/SELECTORS.md) 
+  
 * [Blog Editor (under construction 🚧) ](workshops/blog-editor/index.md)
