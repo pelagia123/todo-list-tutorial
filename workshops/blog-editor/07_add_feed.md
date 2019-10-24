@@ -1,9 +1,7 @@
 
 
 # Add a BlogCardComponent
-Run the command shown below to create the blog card component.
-
-    ng g c components/blog-card
+Create a new blog card component. Therefore right-click on the folder 📁```components``` and then navigate to 'Angular Generator', select 'Component' and provide the name ‘blog-card’.
 
 Open [`src/app/components/blog-card.component.ts`](https://github.com/AnkitSharma-007/blogsite/blob/master/src/app/components/blog-card/blog-card.component.ts#L2-L3) and add the following imports
 
