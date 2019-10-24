@@ -65,4 +65,5 @@
   * [\#3: Implementing actions in app](ngrx/ACTIONS_IN_APP.md) 
   * [\#4: Selectors](ngrx/SELECTORS.md) 
   
-* [Blog Editor (under construction 🚧) ](workshops/blog-editor/index.md)
+* [Blog Editor ](workshops/blog-editor/index.md)
+  * [\#1 ⚙️Configuring firebase](workshops/blog-editor/01_firebase.md)

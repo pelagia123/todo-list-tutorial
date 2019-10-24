@@ -10,60 +10,7 @@ With this tutorial we will show you a simple step-by-step guide to create your f
 
 
 
-# \#1 ⚙️Configuring firebase
-We will create a project on firebase and configure cloud firestore database for it. We will use this database for our angular application. The steps are shown below.
 
-### Creating a project on firebase
-To create a new project on firebase follow the steps mentioned below.
- - Navigate to
-   [https://console.firebase.google.com/](https://console.firebase.google.com/)
-   and login using your Gmail account.
- -  Click on “Create a Project” button.
- - Enter you project name. You can give any name of your choice. Here we
-   will use the name `ngBlog`.
- - Accept the terms and click on Continue.
- - If asked to setup Google Analytics, select “Not right now”
- - Click on “Create your project”.
- - Once the project is ready click Continue.
-
-### Add Firebase configuration to your application
- - Click on the “Web” icon on the page.
- - Provide a nickname for your app and click on “Register app”. 
- - Copy the `firebaseConfig` object from the `<script>` tag.
- - Paste the copied code into [`src/environments/environment.ts`](https://github.com/AnkitSharma-007/blogsite/blob/master/src/environments/environment.ts).
- - Similarly, paste the code into [`src/environments/environment.prod.ts`](https://github.com/AnkitSharma-007/blogsite/blob/master/src/environments/environment.prod.ts).
- - Import the `environment` constant after the `AppComponent` import, into [`src/app/app.module.ts`](https://github.com/AnkitSharma-007/blogsite/blob/master/src/app/app.module.ts#L12).
- - Click "Continue to the console" on the Firebase web page.
-
-### Create "Cloud Firestore" database
- - Navigate to the "Project Overview" page of your Firebase project. 
- - Select “Database” under “Develop” menu from the list on the left.
- - Click on “Create database” button. 
- - Select “Start in test mode”. Click "Next". Click “Done”
-The Cloud Firestore database is now configured for your Firebase project.
-
-
-# Install @angular/fire and firebase
-
-⏰ We already installed ```@angular/fire``` in your stackblitz starter.
-
-Now you simply need to import the libraries of AngularFire at the beginning of <img src="../../assets/icons/angular.svg" style="width: 16px; height: 16px; padding: 0" /> **app.module.ts** and make them available at the imports-Array as shown below.
-
-```
-// import AngularFire
-import { AngularFireModule } from '@angular/fire';
-import { AngularFirestoreModule } from '@angular/fire/firestore';
-
-@NgModule({
-...
-imports: [
-  // AngularFire & configuration
-  AngularFireModule.initializeApp(environment.firebaseConfig),
-  AngularFirestoreModule,
-  ],
-...
-})
-```
 
 # Install Angular Material packages
 
