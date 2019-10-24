@@ -5,9 +5,7 @@ We will add two custom pipes in our app
  - **Excerpt**:  which will show a summary of post in blog card.
  - **Slug**:  which will show the URL slug for a post.
 
-Run the following command to generate the excerpt pipe.
-
-    ng g p custompipes/excerpt
+We will create a a new pipe named ExcerptPipe. Right-click on the folder 📁```custompipes``` and then navigate to 'Angular Generator', select 'Pipe' and provide the name ‘excerpt.
 
 Replace the `transform` method with the following, as shown at [https://github.com/AnkitSharma-007/blogsite/blob/master/src/app/custompipes/excerpt.pipe.ts#L5-L12](https://github.com/AnkitSharma-007/blogsite/blob/master/src/app/custompipes/excerpt.pipe.ts#L5-L12)
 
@@ -20,9 +18,7 @@ Replace the `transform` method with the following, as shown at [https://github.c
       }
     }
 
-Run the following command to generate the slug pipe.
-
-    ng g p custompipes/slug
+Furthermor we create a slug pipe. Right-click on the folder 📁```custompipes``` and then navigate to 'Angular Generator', select 'Pipe' and provide the name ‘slug’.
 
 Replace the `transform` method with the following, as shown at [https://github.com/AnkitSharma-007/blogsite/blob/master/src/app/custompipes/slug.pipe.ts#L5-L8](https://github.com/AnkitSharma-007/blogsite/blob/master/src/app/custompipes/slug.pipe.ts#L5-L8)
 
