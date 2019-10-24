@@ -1,14 +1,16 @@
 Version 1.0 (ada)
 
+#  💃 Creating a blog editor
+With this tutorial we will show you a simple step-by-step guide to create your first own blog-editor.
 
-# Prerequisites
+# \#0: 📋 Prerequisites
  - Register on Github.com
- - Have a google Login
+ - Have a google.com Login
  - Open the [Starter Template](https://stackblitz.com/edit/ada19-workshop-start)
 
 
 
-# Configuring firebase
+# \#1 ⚙️Configuring firebase
 We will create a project on firebase and configure cloud firestore database for it. We will use this database for our angular application. The steps are shown below.
 
 ### Creating a project on firebase
@@ -43,22 +45,25 @@ The Cloud Firestore database is now configured for your Firebase project.
 
 # Install @angular/fire and firebase
 
+⏰ We already installed ```@angular/fire``` in your stackblitz starter.
 
-Import the libraries for AngularFire in [`src/app/app.module.ts`](https://github.com/AnkitSharma-007/blogsite/blob/master/src/app/app.module.ts#L3-L4) as shown below.
-   
-    import { AngularFireModule } from '@angular/fire';
-    import { AngularFirestoreModule } from '@angular/fire/firestore';
+Now you simply need to import the libraries of AngularFire at the beginning of <img src="../../assets/icons/angular.svg" width="16" /> **app.module.ts** and make them available at the imports-Array as shown below.
 
-    @NgModule({
-    ...
-    imports: [
-	    // other imports
-	    AngularFireModule.initializeApp(environment.firebaseConfig),
-	    AngularFirestoreModule,
-      ],
-    ...
-    })
+```
+// import AngularFire
+import { AngularFireModule } from '@angular/fire';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
 
+@NgModule({
+...
+imports: [
+  // AngularFire & configuration
+  AngularFireModule.initializeApp(environment.firebaseConfig),
+  AngularFirestoreModule,
+  ],
+...
+})
+```
 
 # Install Angular Material packages
 
