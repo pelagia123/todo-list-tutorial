@@ -1,9 +1,7 @@
 
 # Read a blog post
 
-We will add the feature of reading a blog. Run the following command to create the blog component
-
-    ng g c components/blog
+We will add the feature of reading a blog. Create a new blog component. Right-click on the folder 📁```components``` and then navigate to 'Angular Generator', select 'Component' and provide the name ‘blog’.
 
 Add the router link for this component in [`app.module.ts`](https://github.com/AnkitSharma-007/blogsite/blob/master/src/app/app.module.ts#L43) as shown below
 
