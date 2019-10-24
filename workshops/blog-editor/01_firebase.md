@@ -1,4 +1,3 @@
-# \#1 ⚙️Configuring firebase
 We will create a project on firebase and configure cloud firestore database for it. We will use this database for our angular application. The steps are shown below.
 
 ### Creating a project on firebase

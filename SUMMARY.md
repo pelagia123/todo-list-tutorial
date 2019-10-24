@@ -67,3 +67,5 @@
   
 * [Blog Editor ](workshops/blog-editor/index.md)
   * [\#1 ⚙️Configuring firebase](workshops/blog-editor/01_firebase.md)
+  * [\#2 ⚙💅Add Angular Material](workshops/blog-editor/02_add_material.md)
+  * [\#3 ⚙💅Add Bootstrap](workshops/blog-editor/03_add_bootstrap.md)
