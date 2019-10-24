@@ -1,8 +1,9 @@
-(under construction 🚧)
+Version 1.0 (ada)
 
 
 # Prerequisites
  - Register on Github.com
+ - Have a google Login
  - Open the [Starter Template](https://stackblitz.com/edit/ada19-workshop-start)
 
 
@@ -43,7 +44,7 @@ The Cloud Firestore database is now configured for your Firebase project.
 # Install @angular/fire and firebase
 
 
-Import the libraries in [`src/app/app.module.ts`](https://github.com/AnkitSharma-007/blogsite/blob/master/src/app/app.module.ts#L3-L4) as shown below.
+Import the libraries for AngularFire in [`src/app/app.module.ts`](https://github.com/AnkitSharma-007/blogsite/blob/master/src/app/app.module.ts#L3-L4) as shown below.
    
     import { AngularFireModule } from '@angular/fire';
     import { AngularFirestoreModule } from '@angular/fire/firestore';
@@ -62,7 +63,7 @@ Import the libraries in [`src/app/app.module.ts`](https://github.com/AnkitSharma
 # Install Angular Material packages
 
 
-After installation import it into [`src/app/app.module.ts`](https://github.com/AnkitSharma-007/blogsite/blob/master/src/app/app.module.ts#L5) file as shown below.
+Import the Browser Animation Module into [`src/app/app.module.ts`](https://github.com/AnkitSharma-007/blogsite/blob/master/src/app/app.module.ts#L5) file as shown below.
 
     import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     
