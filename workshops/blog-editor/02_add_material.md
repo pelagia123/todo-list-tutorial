@@ -1,3 +1,5 @@
+Angular Material is a UI (User Interface) component library that can help you to style your application based on modern web design principles. The following steps show you how to get started with Angular Material.
+
 # Add Angular Material packages
 
 
