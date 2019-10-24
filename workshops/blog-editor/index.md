@@ -47,7 +47,7 @@ The Cloud Firestore database is now configured for your Firebase project.
 
 ⏰ We already installed ```@angular/fire``` in your stackblitz starter.
 
-Now you simply need to import the libraries of AngularFire at the beginning of <img src="../../assets/icons/angular.svg" width="16" /> **app.module.ts** and make them available at the imports-Array as shown below.
+Now you simply need to import the libraries of AngularFire at the beginning of <img src="../../assets/icons/angular.svg" style="width: 16px; height: 16px; padding: 0" /> **app.module.ts** and make them available at the imports-Array as shown below.
 
 ```
 // import AngularFire
