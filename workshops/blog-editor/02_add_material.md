@@ -29,9 +29,7 @@ We will add a built-in material theme globally by including the following line i
 
 
 # Add a module for Angular material
-We will create a new module to include all the material related components. Right click on the 📁```ng-material``` folder and create a module with the name ```ng-material```.
-
-    ng g m ng-material
+We will create a new module to include all the material related components. Right click on the 📁```ng-material``` folder and navigate to 'Angular Generator' and select 'Module'. Then provide the name ```ng-material``` for our new module.
 
 Open `src/app/ng-material/ng-material.module.ts` and replace what is there with the code in [https://github.com/AnkitSharma-007/blogsite/blob/master/src/app/ng-material/ng-material.module.ts](https://github.com/AnkitSharma-007/blogsite/blob/master/src/app/ng-material/ng-material.module.ts)
 
