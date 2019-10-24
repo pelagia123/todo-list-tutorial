@@ -28,9 +28,7 @@ Create new a folder `src/app/models`. Create a new file [`src/app/models/post.ts
 
 
 # Create the blog service
-We will create a service to handle our the database operation. Create a new service using the command shown below.
-
-    ng g s services/blog
+We will create a service to handle our database operations. Create a new service by making a right-click on the folder 📁```services```and navigating to 'Angular Generator','Component' and provide the name ‘blog’.
 
 Open the [`src/app/services/blog.service.ts`](https://github.com/AnkitSharma-007/blogsite/blob/master/src/app/services/blog.service.ts#L2-L5) file and add the following import definitions.
 
@@ -52,13 +50,13 @@ Now we will add the method to create a new post. The method to add a new blog po
 
 
 # Install CkEditor package
-We will use [CKEditor](https://ckeditor.com/) for adding and editing our blog post. CKEditor is a Smart WYSIWYG editor which provides us great editing capabilities.
+We will use [CKEditor](https://ckeditor.com/) for adding and editing our blog post. CKEditor is a Smart WYSIWYG(What you see is what you get) editor which provides us with great editing capabilities.
 
-Execute the commands shown below to install the CKEditor WYSIWYG editor component for Angular.
+Execute the commands shown below to install the CKEditor WYSIWYG editor component for Angular (If you use the Stackblitz Example this is already installed).
 
     npm install --save @ckeditor/ckeditor5-angular
 
-Run the command shown below to install one of the official editor builds which is classic editor.
+Run the command shown below to install one of the official editor builds which is classic editor (If you use the Stackblitz Example this is already installed).
 
     npm install --save @ckeditor/ckeditor5-build-classic
 
@@ -76,10 +74,7 @@ Imports the `CKEditorModule` in [`src/app/app.module.ts`](https://github.com/Ank
 
 # Add the blog editor
 
-We will create a new component for adding and editing the blog. Run the command as shown below.
-
-    ng g c components/blog-editor
-
+We will create a new component for adding and editing the blog. Let’s make a right-click on the folder 📁```components```. Navigate to 'Angular Generator', select 'Component' and provide the name ‘blog-editor’.
 
 ### Add a route to the addpost page
 Add the route for this component in `app.module.ts` as shown at [https://github.com/AnkitSharma-007/blogsite/blob/master/src/app/app.module.ts#L42](https://github.com/AnkitSharma-007/blogsite/blob/master/src/app/app.module.ts#L42)
