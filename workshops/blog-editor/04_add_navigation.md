@@ -1,7 +1,5 @@
 # Add Navigation Bar
-Run the following command, in the original terminal, to generate a navigation bar component.
-
-    ng g c components/nav-bar
+We will create a new navigation bar component by making a right-click on the folder 📁```components```. Navigate to 'Angular Generator' and select 'Component' and provide the name ‘nav-bar’.
 
 Open `src/app/components/nav-bar/nav-bar.component.html` and replace what is there with the following code.
 ```
@@ -23,11 +21,9 @@ button:focus {
 ```
 
 # Create the Home Page
-Run the following command to create the HomeComponent
+We will create another component named HomeComponent. Let’s make a right-click on the folder 📁```components```. Navigate to 'Angular Generator', select 'Component' and provide the name ‘home’.
 
-    ng g c components/home
-
-At this point in time we will not add any code to `HomeComponent`. We will revisit in a later part of this workshop.
+For now we will not add any code to `HomeComponent`. We will revisit this component in a later part of this workshop.
 
 
 # Add Router module
