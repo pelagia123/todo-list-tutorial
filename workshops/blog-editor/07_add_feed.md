@@ -31,9 +31,9 @@ getBlogPosts() {
 }
 ```
 
-Open 📝`src/app/components/blog-card.component.html` and REPLACE what is there with the HTML shown at [https://github.com/AnkitSharma-007/blogsite/blob/master/src/app/components/blog-card/blog-card.component.html](https://github.com/AnkitSharma-007/blogsite/blob/master/src/app/components/blog-card/blog-card.component.html)
+Open 📝`src/app/components/blog-card.component.html` and REPLACE what is there with the HTML shown at [blog-card.component.html (Github)](https://github.com/ng-girls/todo-list-tutorial/blob/master/workshops/blog-editor/code/07-blog-card/blog-card.component.html)
 
-Open `src/app/components/blog-card/blog-card.component.scss` and REPLACE what is there with the style definitions shown at [https://github.com/AnkitSharma-007/blogsite/blob/master/src/app/components/blog-card/blog-card.component.scss](https://github.com/AnkitSharma-007/blogsite/blob/master/src/app/components/blog-card/blog-card.component.scss)
+Open `src/app/components/blog-card/blog-card.component.scss` and REPLACE what is there with the style definitions shown at [blog-card.component.scss (Github)](https://github.com/AnkitSharma-007/blogsite/blob/master/src/app/components/blog-card/blog-card.component.scss)
 
 
 # Add the BlogCardComponent to the home page

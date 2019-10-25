@@ -1,6 +1,6 @@
 # Add Forms module
 We will add the `FormsModule` in [`src/app/app.module.ts`](https://github.com/AnkitSharma-007/blogsite/blob/master/src/app/app.module.ts#L8) as shown below.
-
+```
     import { FormsModule } from  '@angular/forms';
     
     @NgModule({
@@ -10,44 +10,43 @@ We will add the `FormsModule` in [`src/app/app.module.ts`](https://github.com/An
         FormsModule,
       ],
     })
-
+```
 
 # Creating the data model
 Create new a folder `src/app/models`. Create a new file [`src/app/models/post.ts`](https://github.com/AnkitSharma-007/blogsite/blob/master/src/app/models/post.ts) and paste the following code
-
+```
     export class Post {
 	    postId: string;
 	    title: string;
 	    content: string;
-	    createdDate: any;
-	    
+	    createdDate: any;	    
 		    constructor() {
 		    this.content = '';
 	    }
     }
-
+```
 
 # Create the blog service
 We will create a service to handle our database operations. Create a new service by making a right-click on the folder 📁```services```and navigating to 'Angular Generator','Component' and provide the name ‘blog’.
 
 Open the [`src/app/services/blog.service.ts`](https://github.com/AnkitSharma-007/blogsite/blob/master/src/app/services/blog.service.ts#L2-L5) file and add the following import definitions.
-
+```
     import { AngularFirestore } from  '@angular/fire/firestore';
     import { Post } from  '../models/post';
     import { map } from  'rxjs/operators';
     import { Observable } from  'rxjs';
-
+```
 Inject the `AngularFirestore` in the constructor.
-
+```
     constructor(private db: AngularFirestore) { }
-
+```
 Now we will add the method to create a new post. The method to add a new blog post is shown at [https://github.com/AnkitSharma-007/blogsite/blob/master/src/app/services/blog.service.ts#L14-L17](https://github.com/AnkitSharma-007/blogsite/blob/master/src/app/services/blog.service.ts#L14-L17). Put this method in `blog.service.ts` file.
-
+```
     createPost(post: Post) {
       const postData = JSON.parse(JSON.stringify(post));
       return this.db.collection('blogs').add(postData);
     }
-
+```
 
 # Install CkEditor package
 We will use [CKEditor](https://ckeditor.com/) for adding and editing our blog post. CKEditor is a Smart WYSIWYG(What you see is what you get) editor which provides us with great editing capabilities.
@@ -61,7 +60,7 @@ Run the command shown below to install one of the official editor builds which i
     npm install --save @ckeditor/ckeditor5-build-classic
 
 Imports the `CKEditorModule` in [`src/app/app.module.ts`](https://github.com/AnkitSharma-007/blogsite/blob/master/src/app/app.module.ts#L9) as shown below.
-
+```
     import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 
     @NgModule( {
@@ -70,7 +69,7 @@ Imports the `CKEditorModule` in [`src/app/app.module.ts`](https://github.com/Ank
         CKEditorModule,
       ],
     })
-
+```
 
 # Add the blog editor
 
@@ -78,32 +77,32 @@ We will create a new component for adding and editing the blog. Let’s make a r
 
 ### Add a route to the addpost page
 Add the route for this component in `app.module.ts` as shown at [https://github.com/AnkitSharma-007/blogsite/blob/master/src/app/app.module.ts#L42](https://github.com/AnkitSharma-007/blogsite/blob/master/src/app/app.module.ts#L42)
-
+```
     RouterModule.forRoot([
       ...
       { path: 'addpost', component: BlogEditorComponent },
       ...
     ])
-
+```
 ### Add CKEditor to `BlogEditorComponent`
 Open `src/app/components/blog-editor/blog-editor.component.ts` and add the import definitions as shown at [https://github.com/AnkitSharma-007/blogsite/blob/master/src/app/components/blog-editor/blog-editor.component.ts#L2-L6](https://github.com/AnkitSharma-007/blogsite/blob/master/src/app/components/blog-editor/blog-editor.component.ts#L2-L6)
-
+```
     import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic';
     import { Post } from 'src/app/models/post';
     import { DatePipe } from '@angular/common';
     import { BlogService } from 'src/app/services/blog.service';
     import { Router, ActivatedRoute } from '@angular/router';
-
+```
 We will also initialize some properties as shown at [https://github.com/AnkitSharma-007/blogsite/blob/master/src/app/components/blog-editor/blog-editor.component.ts#L16-L20](https://github.com/AnkitSharma-007/blogsite/blob/master/src/app/components/blog-editor/blog-editor.component.ts#L16-L20)
-
+```
     public Editor = ClassicEditor;
     ckeConfig: any;
     postData = new Post();
     formTitle = 'Add';
     postId = '';
-    
+```    
 We will create a method to define the configuration for the blog editor. You can get the method definition from [https://github.com/AnkitSharma-007/blogsite/blob/master/src/app/components/blog-editor/blog-editor.component.ts#L50-L66](https://github.com/AnkitSharma-007/blogsite/blob/master/src/app/components/blog-editor/blog-editor.component.ts#L50-L66)
-
+```
     setEditorConfig() {
       this.ckeConfig = {
         removePlugins: ['ImageUpload', 'MediaEmbed'],
@@ -121,16 +120,16 @@ We will create a method to define the configuration for the blog editor. You can
         }
       };
     }
-
+```
 We will invoke this method inside `ngOnInit` as shown below.
-
+```
     ngOnInit() {
       this.setEditorConfig();
     }
-
+```
 ### Update the BlogEditorComponent template
 Open `src/app/components/blog-editor/blog-editor.component.html` and put the code as shown at [https://github.com/AnkitSharma-007/blogsite/blob/master/src/app/components/blog-editor/blog-editor.component.html](https://github.com/AnkitSharma-007/blogsite/blob/master/src/app/components/blog-editor/blog-editor.component.html)
-
+```
     <h1>{{formTitle}} Post</h1>
     <hr />
     <form #myForm="ngForm" (ngSubmit)="myForm.form.valid && saveBlogPost()" accept-charset="UTF-8" novalidate>
@@ -149,26 +148,26 @@ Open `src/app/components/blog-editor/blog-editor.component.html` and put the cod
             <button type=" button" mat-raised-button color="warn" (click)="cancel()">CANCEL</button>
         </div>
     </form>
-
+```
 
 
 # Add a new blog
 We will now implement the feature of adding a new blog to our application. Open [`src/app/components/blog-editor.component.ts`](https://github.com/AnkitSharma-007/blogsite/blob/master/src/app/components/blog-editor/blog-editor.component.ts#L22-L25) and inject the following service definitions in the constructor.
-
+```
     constructor(private  _route: ActivatedRoute,
       private  datePipe: DatePipe,
       private  blogService: BlogService,
       private  _router: Router) { }
-
+```
 Add the following code in `@Component` decorator `DatePipe` can be injected.
-
+```
     @Component({
       ...
       providers: [DatePipe]
     }
-
+```
 We will create a new method called `saveBlogPost` which is used to add a new post to our database. The definition for this method is shown below.
-
+```
     saveBlogPost() {
       this.postData.createdDate = this.datePipe.transform(Date.now(), 'MM-dd-yyyy HH:mm');
       this.blogService.createPost(this.postData).then(
@@ -177,31 +176,33 @@ We will create a new method called `saveBlogPost` which is used to add a new pos
         }
       );
     }
-
+```
 This method will be invoked on click of Save button. We will add the following code definition for Cancel button.
-
+```
     cancel() {
     	this._router.navigate(['/']);
     }
-
+```
 
 # Add buttons in Nav bar
-We will add the navigation button to blog editor and home page in the nav bar. Add the following code to the `<mat-toolbar>` element in [`src/app/components/nav-bar/nav-bar.component.html`](https://github.com/AnkitSharma-007/blogsite/blob/master/src/app/components/nav-bar/nav-bar.component.html#L2-L5).
-
-    <button mat-button [routerLink]='[""]'> My blog </button>
-    <button mat-button [routerLinkActive]='["link-active"]' [routerLink]='["/addpost"]'>
-        Add Post
-    </button>
-
+We will add the navigation button to blog editor and home page in the nav bar. Add the following code inside the `<mat-toolbar>` in the file 📝`src/app/components/nav-bar/nav-bar.component.html`:
+```
+<mat-toolbar class="nav-bar mat-elevation-z2">
+  <button mat-button [routerLink]='[""]'> My blog </button>
+  <button mat-button [routerLinkActive]='["link-active"]' [routerLink]='["/addpost"]'>
+      Add Post
+  </button>
+</mat-toolbar>
+```
 
 ### Add BlogEditorComponent styles 
-We will add styling for blog editor in `styles.scss` file as shown at [https://github.com/AnkitSharma-007/blogsite/blob/master/src/styles.scss#L14-L43](https://github.com/AnkitSharma-007/blogsite/blob/master/src/styles.scss#L14-L43)
+We will add styling for blog editor in 📝`styles.scss` file with the following code:
 
+```
     .ck-editor__editable {
       max-height: 350px;
       min-height: 350px;
     }
-    
     pre {
       display: block;
       padding: 9.5px;
@@ -227,6 +228,6 @@ We will add styling for blog editor in `styles.scss` file as shown at [https://g
     img{
       max-width: 100%;
     }
-
+```
 ### Test it out
 Open the browser and click on “AddPost” button on the nav-bar. You will be navigated to the blog editor page. Add a new blog and click on save button to save the blog in thee database. Open the firebase console, navigate to your project overview page and click on “Database” link in the menu on the left. Here you can see the record for your newly added blog.

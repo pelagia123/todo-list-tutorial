@@ -49,6 +49,10 @@ export const environment = {
 };
  ```
 
+ You can for workshop purposes these credentials:
+ * [Firebase Credentials](
+https://docs.google.com/document/d/16LAET8unKwy3kvZiCEWIj7q5IuEZokIeqby4KQt5wcQ/edit?usp=sharing)
+
  - Click "Continue to the console" on the Firebase web page.
 
 ### Create "Cloud Firestore" database
