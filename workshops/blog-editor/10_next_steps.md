@@ -15,9 +15,6 @@ An advanced version of this app with all the new features is available at [https
 * Ankit
 * Original ressource: https://github.com/AnkitSharma-007/blogsite/blob/master/README.md
 
-### Personal blog
-You can read articles on Angular on my personal blog at [https://ankitsharmablogs.com/](https://ankitsharmablogs.com/)
-
 ### Explore Angular in depth
 
 If you want to explore Angular in depth then refer to  [https://angular.io/start](https://angular.io/start)
