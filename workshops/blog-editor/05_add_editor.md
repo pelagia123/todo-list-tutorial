@@ -1,5 +1,5 @@
 # Add Forms module
-We will add the `FormsModule` in [`src/app/app.module.ts`](https://github.com/AnkitSharma-007/blogsite/blob/master/src/app/app.module.ts#L8) as shown below.
+We will add the `FormsModule` in 📝`src/app/app.module.ts` as shown below.
 ```
     import { FormsModule } from  '@angular/forms';
     
@@ -13,7 +13,7 @@ We will add the `FormsModule` in [`src/app/app.module.ts`](https://github.com/An
 ```
 
 # Creating the data model
-Create new a folder `src/app/models`. Create a new file [`src/app/models/post.ts`](https://github.com/AnkitSharma-007/blogsite/blob/master/src/app/models/post.ts) and paste the following code
+Create new a folder `src/app/models`. Create a new file 📝`src/app/models/post.ts` and paste the following code
 ```
     export class Post {
 	    postId: string;
@@ -29,7 +29,7 @@ Create new a folder `src/app/models`. Create a new file [`src/app/models/post.ts
 # Create the blog service
 We will create a service to handle our database operations. Create a new service by making a right-click on the folder 📁```services```and navigating to 'Angular Generator','Component' and provide the name ‘blog’.
 
-Open the [`src/app/services/blog.service.ts`](https://github.com/AnkitSharma-007/blogsite/blob/master/src/app/services/blog.service.ts#L2-L5) file and add the following import definitions.
+Open the 📝`src/app/services/blog.service.ts` file and add the following import definitions.
 ```
     import { AngularFirestore } from  '@angular/fire/firestore';
     import { Post } from  '../models/post';
@@ -51,15 +51,10 @@ Now we will add the method to create a new post. The method to add a new blog po
 # Install CkEditor package
 We will use [CKEditor](https://ckeditor.com/) for adding and editing our blog post. CKEditor is a Smart WYSIWYG(What you see is what you get) editor which provides us with great editing capabilities.
 
-Execute the commands shown below to install the CKEditor WYSIWYG editor component for Angular (If you use the Stackblitz Example this is already installed).
+⏰We already installed into stackblitz ``` @ckeditor/ckeditor5-angular @ckeditor/ckeditor5-build-classic```
 
-    npm install --save @ckeditor/ckeditor5-angular
 
-Run the command shown below to install one of the official editor builds which is classic editor (If you use the Stackblitz Example this is already installed).
-
-    npm install --save @ckeditor/ckeditor5-build-classic
-
-Imports the `CKEditorModule` in [`src/app/app.module.ts`](https://github.com/AnkitSharma-007/blogsite/blob/master/src/app/app.module.ts#L9) as shown below.
+Imports the `CKEditorModule` in 📝`src/app/app.module.ts` as shown below.
 ```
     import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 
@@ -76,7 +71,7 @@ Imports the `CKEditorModule` in [`src/app/app.module.ts`](https://github.com/Ank
 We will create a new component for adding and editing the blog. Let’s make a right-click on the folder 📁```components```. Navigate to 'Angular Generator', select 'Component' and provide the name ‘blog-editor’.
 
 ### Add a route to the addpost page
-Add the route for this component in `app.module.ts` as shown at [https://github.com/AnkitSharma-007/blogsite/blob/master/src/app/app.module.ts#L42](https://github.com/AnkitSharma-007/blogsite/blob/master/src/app/app.module.ts#L42)
+Add the route for this component in 📝`app.module.ts` as shown below:
 ```
     RouterModule.forRoot([
       ...
@@ -85,7 +80,7 @@ Add the route for this component in `app.module.ts` as shown at [https://github.
     ])
 ```
 ### Add CKEditor to `BlogEditorComponent`
-Open `src/app/components/blog-editor/blog-editor.component.ts` and add the import definitions as shown at [https://github.com/AnkitSharma-007/blogsite/blob/master/src/app/components/blog-editor/blog-editor.component.ts#L2-L6](https://github.com/AnkitSharma-007/blogsite/blob/master/src/app/components/blog-editor/blog-editor.component.ts#L2-L6)
+Open 📝`src/app/components/blog-editor/blog-editor.component.ts` and add the import definitions:
 ```
     import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic';
     import { Post } from 'src/app/models/post';
@@ -152,7 +147,7 @@ Open `src/app/components/blog-editor/blog-editor.component.html` and put the cod
 
 
 # Add a new blog
-We will now implement the feature of adding a new blog to our application. Open [`src/app/components/blog-editor.component.ts`](https://github.com/AnkitSharma-007/blogsite/blob/master/src/app/components/blog-editor/blog-editor.component.ts#L22-L25) and inject the following service definitions in the constructor.
+We will now implement the feature of adding a new blog to our application. Open 📝`src/app/components/blog-editor.component.ts` and inject the following service definitions in the constructor.
 ```
     constructor(private  _route: ActivatedRoute,
       private  datePipe: DatePipe,

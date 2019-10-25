@@ -5,7 +5,7 @@ Open `src/app/components/nav-bar/nav-bar.component.html` and replace what is the
 ```
 <mat-toolbar class="nav-bar mat-elevation-z2"></mat-toolbar>
 ```
-We will add the styling for nav bar in [`src/app/components/nav-bar/nav-bar.component.scss`](https://github.com/AnkitSharma-007/blogsite/blob/master/src/app/components/nav-bar/nav-bar.component.scss) as shown below
+We will add the styling for nav bar  📝`src/app/components/nav-bar/nav-bar.component.scss` as shown below
 ```
 .nav-bar {
   background-color: #1565C0;
@@ -27,7 +27,7 @@ For now we will not add any code to `HomeComponent`. We will revisit this compon
 
 
 # Add Router module
-We will add the `RouterModule` into [`src/app/app.module.ts`](https://github.com/AnkitSharma-007/blogsite/blob/master/src/app/app.module.ts#L7) as shown below.
+We will add the `RouterModule` into 📝`src/app/app.module.ts` as shown below.
 ```
     import { RouterModule } from '@angular/router';
     
@@ -44,14 +44,14 @@ We will add the `RouterModule` into [`src/app/app.module.ts`](https://github.com
 ```
 
 # Update the `AppComponent`
-Open [`src/app/app.component.html`](https://github.com/AnkitSharma-007/blogsite/blob/master/src/app/app.component.html) and replace the content of the file with the following code.
+Open 📝`src/app/app.component.html` and replace the content of the file with the following code.
 ```
 <app-nav-bar></app-nav-bar>
 <div class="container">
     <router-outlet></router-outlet>
 </div>
 ```
-Add the following styles to [`src/styles.scss`](https://github.com/AnkitSharma-007/blogsite/blob/master/src/styles.scss#L6-L12)
+Add the following styles to 📝`src/styles.scss`:
 ```
 body {
     background-color: #fafafa;
