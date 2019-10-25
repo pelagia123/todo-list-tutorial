@@ -1,12 +1,13 @@
-## Selectors
+# Selectors
 
-You may now also implement selector so instead of displaing data wtored in DB you will display data from store. 
+Now we'll add a **selector** that allows us to display data from the store instead of the database. This allows the store to become the single source of truth for data in our application.
 
-Are you able to create selector based on information provided on [NgRx Docs](https://ngrx.io/guide/store/selectors)?
+Take a look at the documentation and try to create selector based on information provided on [NgRx Docs](https://ngrx.io/guide/store/selectors).
 
-:hourglass_flowing_sand::dancer::hourglass_flowing_sand::dancer::hourglass_flowing_sand::dancer::hourglass_flowing_sand::dancer::hourglass_flowing_sand::dancer::hourglass_flowing_sand:
+⏳⏳⏳⏳⏳⏳
 
-I bet you've wrote something like this:
+Does your code look something similar to this?
+
 ```ts
 export const getTodoListState = (state: State) => state.todoList;
 
@@ -18,28 +19,29 @@ export const getTodoItems = createSelector(
 
 ## Displaying data from store
 
-Since our selector is ready you may now retrieve items from store.
-Where do you want to implement the solution?
+Now that our selector is ready, let's retrieve items from the store.
 
-Is it `todo-list-service`? We've chosen this file :blush:
+One question we might ask ourselves is where to implement the code?
 
-The idea is again simple. You need to initialize the store in constructor.
-Then you may use your selector by calling `select` method on store.
-Recommended way to import selectors looks like that: 
+The `todo-list-service.ts` is a good candidate, so we'll show examples using this file 😊
+
+To access the selector, you need to first initialize the store in constructor. Then you may use your selector by calling `select` method on store.
+
+The recommended way to import selectors looks like this:
 
 ```ts
 import * as fromTodoListSelectors from '../store/todo-list/selectors';
 ```
 
-Now mentioned `select` method:
+Now add the `select` method:
 
 ```ts
 this.store.select(fromTodoListSelectors.getTodoItems)
 ```
 
-It's returning an Observable with todo list items from store, so you may easily subscribe to it and do not worry about calling it again every time data will update :blush:
+It's returning an Observable with todo list items from store, so you can subscribe to it. Since it's an Observable, we'll automatically get the latest data without having to manually call it again. 😊
 
-Same as with retrieving info from Data Base you may now do it from store:
+Now we can make the change to retrieve data from the store instead of the database:
 
 ```ts
   retrieveListFromStore() {
@@ -47,6 +49,6 @@ Same as with retrieving info from Data Base you may now do it from store:
   }
 ```
 
-You may now comment or remove code calling to MongoDB and check if your app is able to have your todo list inside store :blush:
+You may now remove the code calling MongoDB and take a moment to double check your work by verifying your app accesses the todo list inside the store. 😊
 
-> As your next step or your homework you may add user information related store, good luck! :muscle:
+> For your next step or your homework, try adding user information related store. Good luck; you got this! 💪
