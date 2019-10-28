@@ -14,8 +14,8 @@ In this file you will define:
 It also updated imports in `src/app/app.module.ts` with `StoreModule.forRoot(reducers, { metaReducers })`.
 ___
 
-In previous step you were asked to do small brainstorming session and make notes. Based on those notes how do you thing the **state** interface will look like? :thinking:
-Try to think of structure of this interface accordingly to your ideas, but below you'll see what we came up with. :wink:
+In previous step you were asked to do small brainstorming session and make notes. Based on those notes how do you thing the **state** interface will look like? 🤔
+Try to think of structure of this interface accordingly to your ideas, but below you'll see what we came up with. 😉 
 
 We think that in our case there will be propose very simple state:
 
@@ -26,7 +26,7 @@ export interface State {
 }
 ```
 
-You may now think "wait whaaaat?! Where those other states came from? :flushed: My idea is not using any other states". Well, we might have took advantage of our knowledge :stuck_out_tongue_winking_eye:.
+You may now think "wait whaaaat?! Where those other states came from? 😳 My idea is not using any other states". Well, we might have took advantage of our knowledge 😜.
 
 Thinking triggered? Now we may start. We will get back to this interface after a while, now let's prepare the app to use the store.
 
@@ -43,7 +43,7 @@ If you've chosen data structure as ours inside _todo-list_ directory create file
 
 ## Creating actions
 
-Inside this file (:point_up_2:) you may now define the actions.
+Inside this file (👆) you may now define the actions.
 Which are basically `const`s to which you are assigning effect of `createAction` function from **NgRx**.
 As first argument it takes the name of the action, second one are additional parameters (`props`) you may send if you want to additionally pass some data within the action.
 
@@ -61,7 +61,7 @@ export const deleteTodoItem = createAction('[Todo list] Delete todo item', props
 ```
 
 How do you think editing an item may look?
-Try to implement it by yourself :blush:
+Try to implement it by yourself 😳
 
 ## Creating reducers for real
 
@@ -109,6 +109,6 @@ Yes? Then good job!
 
 You may see how we've defined all the reducers and actions on [Stackblitz](https://stackblitz.com/github/pelagia123/todo-list-tutorial/tree/ngrx-store/examples/5_01-store-setup). There are some additional changes, but we will go through them in the next step.
 
-I hope you've had fun during this part :sweat_smile:
+I hope you've had fun during this part 😅
 
 Before moving forward please install [Store Devtools](https://ngrx.io/guide/store-devtools) which will allow you test your code.
