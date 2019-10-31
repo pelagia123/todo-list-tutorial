@@ -8,7 +8,7 @@ Are you able to create selector based on information provided on [NgRx Docs](htt
 
 I bet you've wrote something like this:
 ```ts
-export const getTodoListState = (state: State) => state.todoList;
+export const getRootState = (state: State) => state.todoList;
 
 export const getTodoItems = createSelector(
   getRootState,
