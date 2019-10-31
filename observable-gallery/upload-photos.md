@@ -29,7 +29,7 @@ Do you think you’re ready to add new photos to your gallery? Because I think y
 ```typescript
 handleFileInput(images: File[]) {
     const imagesCollection = Array.from(images)
-    const imagesContent: <Promise<FileContent>> =
+    const imagesContent: Array<Promise<FileContent>> =
         imagesCollection.map(file => readFileContent(file))
 
     const uploadedImages$ = forkJoin(imagesContent).pipe(
